@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hey there, I&#39;m Dinis Peixoto</title>
+    <link>https://dinispeixoto.github.io/</link>
+    <description>Recent content on Hey there, I&#39;m Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dinispeixoto.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Post</title>
+      <link>https://dinispeixoto.github.io/posts/2020/06/first-post/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/posts/2020/06/first-post/</guid>
+      <description>Hello world post </description>
+    </item>
+    
+    <item>
+      <title>First TIL</title>
+      <link>https://dinispeixoto.github.io/til/first-til/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/til/first-til/</guid>
+      <description>Hello world til </description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://dinispeixoto.github.io/about/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/about/</guid>
+      <description>👋 Presentation 👨‍💻 Professional experience 👨‍🎓 Education 🤓 Projects </description>
+    </item>
+    
+  </channel>
+</rss>
