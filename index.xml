@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hey there, I&#39;m Dinis Peixoto</title>
+    <title>Dinis Peixoto</title>
     <link>https://dinispeixoto.github.io/</link>
-    <description>Recent content on Hey there, I&#39;m Dinis Peixoto</description>
+    <description>Recent content on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -31,12 +31,15 @@
     </item>
     
     <item>
-      <title>About me</title>
+      <title>Hey there! 👋</title>
       <link>https://dinispeixoto.github.io/about/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.github.io/about/</guid>
-      <description>👋 Presentation 👨‍💻 Professional experience 👨‍🎓 Education 🤓 Projects </description>
+      <description>I&amp;rsquo;m Dinis Peixoto, a software engineer based in Braga, Portugal. 🇵🇹
+I have been working at farfetch (an e-commerce luxury platform) for almost 2 years now.
+The challenges that come with designing, building and scaling distributed systems is something that fascinates me. Also, most recently, I have been keen to learn and work towards a machine learning engineer role.
+I truly believe that teaching is one of the best ways to learn, that&amp;rsquo;s why I&amp;rsquo;m currently mentoring csharp and python at exercism.</description>
     </item>
     
   </channel>
