@@ -47,7 +47,7 @@ I started by making sure that the internal template was actually being properly 
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.">
 <meta itemprop="datePublished" content="2020-06-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="271">
+<meta itemprop="wordCount" content="270">
 <meta itemprop="image" content="https://dinispeixoto.github.io"/>
 
 
@@ -153,8 +153,8 @@ I started by making sure that the internal template was actually being properly 
 <p>However, I noticed that the Google Analytics script from Hugo&rsquo;s internal template was not looking at the DNT header (it was using a default value set to <code>false</code>), meaning that it was Firefox&rsquo;s protection level that was actually avoiding Google Analytics from tracking myself.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>){...}
-</code></pre></div><p>Either way, I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that let&rsquo;s users opt-out from website&rsquo;s tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">that it is not widely accepted</a>, though.</p>
-<p>I wanted this website to comply with the <em>DNT header</em>, so I&rsquo;ve updated the internal template configuration to actually take advantage of this header and avoid tracking users if they rather not being tracked.</p>
+</code></pre></div><p>Either way, I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that lets users opt-out from websites&rsquo; tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">it is not widely accepted</a> though.</p>
+<p>I wanted this website to comply with the <em>DNT header</em>, so I&rsquo;ve updated the internal template configuration to actually take advantage of this header and avoid tracking users if they rather not be tracked.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msDoNotTrack</span>);
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;yes&#34;</span>);
 <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>) {...}
