@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="While I was setting up Google Analytics for this website, something that should be straightforward, as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked, thus not being displayed on the Google Analytics dashboard.
+I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.github.io/til/do-not-track/" />
+
+
+    <title>
+        
+            Do Not Track - HTTP header :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.github.io/main.a6323a89881403a97c55d67340c0ac7ab71911cfef0a9c4d4722bc78285b00c3.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Do Not Track - HTTP header">
+<meta itemprop="description" content="While I was setting up Google Analytics for this website, something that should be straightforward, as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked, thus not being displayed on the Google Analytics dashboard.
+I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.">
+<meta itemprop="datePublished" content="2020-06-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="271">
+<meta itemprop="image" content="https://dinispeixoto.github.io"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.github.io"/>
+
+<meta name="twitter:title" content="Do Not Track - HTTP header"/>
+<meta name="twitter:description" content="While I was setting up Google Analytics for this website, something that should be straightforward, as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked, thus not being displayed on the Google Analytics dashboard.
+I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok."/>
+
+
+
+    <meta property="og:title" content="Do Not Track - HTTP header" />
+<meta property="og:description" content="While I was setting up Google Analytics for this website, something that should be straightforward, as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked, thus not being displayed on the Google Analytics dashboard.
+I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.github.io/til/do-not-track/" />
+<meta property="og:image" content="https://dinispeixoto.github.io"/>
+<meta property="article:published_time" content="2020-06-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-25T00:00:00+00:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-25 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.github.io/about/">about me</a></li><li><a href="https://dinispeixoto.github.io/posts/">posts</a></li><li><a href="https://dinispeixoto.github.io/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.github.io/til/do-not-track/">Do Not Track - HTTP header</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>While I was setting up Google Analytics for this website, something that should be straightforward, as Hugo already provides an <a href="https://gohugo.io/templates/internal/#google-analytics">internal template</a> for this, I&rsquo;ve noticed that my requests were not being tracked, thus not being displayed on the Google Analytics dashboard.</p>
+<p>I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</p>
+<p>Only then it came to my mind that I was using Firefox with the <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?as=u&amp;utm_source=inproduct">protection level</a> set to <em>strict</em> and the <a href="https://support.mozilla.org/en-US/kb/how-do-i-turn-do-not-track-feature">DNT</a> header <em>enabled</em>. At first, I thought that the latter was the reason why my requests were not being tracked by Google Analytics.</p>
+<p>However, I noticed that the Google Analytics script from Hugo&rsquo;s internal template was not looking at the DNT header (it was using a default value set to <code>false</code>), meaning that it was Firefox&rsquo;s protection level that was actually avoiding Google Analytics from tracking myself.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>){...}
+</code></pre></div><p>Either way, I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that let&rsquo;s users opt-out from website&rsquo;s tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">that it is not widely accepted</a>, though.</p>
+<p>I wanted this website to comply with the <em>DNT header</em>, so I&rsquo;ve updated the internal template configuration to actually take advantage of this header and avoid tracking users if they rather not being tracked.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msDoNotTrack</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;yes&#34;</span>);
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>) {...}
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://dinispeixoto.github.io">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.github.io/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
