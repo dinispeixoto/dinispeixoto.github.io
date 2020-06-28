@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
-<meta name="description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed in the Google Analytics dashboard.
+<meta name="description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -43,11 +43,11 @@ I started by making sure that the internal template was actually being properly 
 
 
 <meta itemprop="name" content="Do Not Track - HTTP header">
-<meta itemprop="description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed in the Google Analytics dashboard.
+<meta itemprop="description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.">
 <meta itemprop="datePublished" content="2020-06-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="266">
+<meta itemprop="wordCount" content="267">
 <meta itemprop="image" content="https://dinispeixoto.github.io"/>
 
 
@@ -57,13 +57,13 @@ I started by making sure that the internal template was actually being properly 
 <meta name="twitter:image" content="https://dinispeixoto.github.io"/>
 
 <meta name="twitter:title" content="Do Not Track - HTTP header"/>
-<meta name="twitter:description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed in the Google Analytics dashboard.
+<meta name="twitter:description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok."/>
 
 
 
     <meta property="og:title" content="Do Not Track - HTTP header" />
-<meta property="og:description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed in the Google Analytics dashboard.
+<meta property="og:description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.github.io/til/do-not-track/" />
@@ -147,10 +147,10 @@ I started by making sure that the internal template was actually being properly 
             
 
             <div class="post-content">
-                <p>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an <a href="https://gohugo.io/templates/internal/#google-analytics">internal template</a> for this, I&rsquo;ve noticed that my requests were not being tracked and displayed in the Google Analytics dashboard.</p>
+                <p>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an <a href="https://gohugo.io/templates/internal/#google-analytics">internal template</a> for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.</p>
 <p>I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</p>
 <p>Only then it came to my mind that I was using Firefox with the <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?as=u&amp;utm_source=inproduct">protection level</a> set to <em>strict</em> and the <a href="https://support.mozilla.org/en-US/kb/how-do-i-turn-do-not-track-feature">DNT</a> header <em>enabled</em>. At first, I thought that the latter was the reason why my requests were not being tracked by Google Analytics.</p>
-<p>However, I noticed that the Google Analytics script from Hugo&rsquo;s internal template was not looking at the DNT header (it was using a default value set to <code>false</code>), meaning that it was Firefox&rsquo;s protection level that was avoiding Google Analytics from tracking myself.</p>
+<p>However, I noticed that the Google Analytics script from Hugo&rsquo;s internal template was not looking at the DNT header. It was using a default value set to <code>false</code> instead, meaning that it was Firefox&rsquo;s protection level that was avoiding Google Analytics from tracking myself.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>){...}
 </code></pre></div><p>I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that lets users opt-out from websites&rsquo; tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">it&rsquo;s not widely accepted</a> though.</p>
