@@ -32,15 +32,6 @@ I started by making sure that the internal template was actually being properly 
     </item>
     
     <item>
-      <title>First TIL</title>
-      <link>https://dinispeixoto.github.io/til/first-til/</link>
-      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.github.io/til/first-til/</guid>
-      <description>Hello world til </description>
-    </item>
-    
-    <item>
       <title>Hey there! 👋</title>
       <link>https://dinispeixoto.github.io/about/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>

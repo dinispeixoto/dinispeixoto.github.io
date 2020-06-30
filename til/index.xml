@@ -22,14 +22,5 @@
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</description>
     </item>
     
-    <item>
-      <title>First TIL</title>
-      <link>https://dinispeixoto.github.io/til/first-til/</link>
-      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.github.io/til/first-til/</guid>
-      <description>Hello world til </description>
-    </item>
-    
   </channel>
 </rss>
