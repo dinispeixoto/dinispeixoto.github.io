@@ -3,7 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dinispeixoto.github.io/categories/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dinispeixoto.github.io/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/categories/git/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/git/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/til/git-add-patch/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/</loc>
+    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/dnt/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/do-not-track/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,18 +48,33 @@
   </url>
   
   <url>
+    <loc>https://dinispeixoto.github.io/tags/firefox/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/google-analytics/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/hugo/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/til/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/categories/web-development/</loc>
+    <lastmod>2020-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dinispeixoto.github.io/til/</loc>
     <lastmod>2020-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/posts/2020/06/first-post/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/posts/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -33,15 +83,7 @@
   </url>
   
   <url>
-    <loc>https://dinispeixoto.github.io/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://dinispeixoto.github.io/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/tags/</loc>
   </url>
   
 </urlset>

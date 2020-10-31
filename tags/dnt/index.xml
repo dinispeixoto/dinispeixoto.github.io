@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Today I learned on Dinis Peixoto</title>
-    <link>https://dinispeixoto.github.io/til/</link>
-    <description>Recent content in Today I learned on Dinis Peixoto</description>
+    <title>dnt on Dinis Peixoto</title>
+    <link>https://dinispeixoto.github.io/tags/dnt/</link>
+    <description>Recent content in dnt on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://dinispeixoto.github.io/til/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dinispeixoto.github.io/tags/dnt/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Git Add Patch</title>
-      <link>https://dinispeixoto.github.io/til/git-add-patch/</link>
-      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.github.io/til/git-add-patch/</guid>
-      <description>It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short.</description>
-    </item>
     
     <item>
       <title>Do Not Track - HTTP header</title>
