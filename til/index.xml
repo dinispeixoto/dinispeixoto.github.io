@@ -19,7 +19,7 @@
       
       <guid>https://dinispeixoto.github.io/til/git-add-patch/</guid>
       <description>It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short.</description>
+Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged, git add . will do the job.</description>
     </item>
     
     <item>

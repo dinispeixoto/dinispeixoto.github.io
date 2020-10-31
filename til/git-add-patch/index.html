@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
 <meta name="description" content="It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short." />
+Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged, git add . will do the job." />
 <meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, git" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -44,10 +44,10 @@ Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m
 
 <meta itemprop="name" content="Git Add Patch">
 <meta itemprop="description" content="It&rsquo;s always fun when you find something entirely new, especially when it&rsquo;s a quirk/feature on a tool that you use daily. This time around, I&rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short.">
+Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged, git add . will do the job.">
 <meta itemprop="datePublished" content="2020-10-31T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="120">
+<meta itemprop="wordCount" content="159">
 <meta itemprop="image" content="https://dinispeixoto.github.io/img/image_original.jpg"/>
 
 
@@ -58,13 +58,13 @@ Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that e
 
 <meta name="twitter:title" content="Git Add Patch"/>
 <meta name="twitter:description" content="It&rsquo;s always fun when you find something entirely new, especially when it&rsquo;s a quirk/feature on a tool that you use daily. This time around, I&rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short."/>
+Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged, git add . will do the job."/>
 
 
 
     <meta property="og:title" content="Git Add Patch" />
 <meta property="og:description" content="It&rsquo;s always fun when you find something entirely new, especially when it&rsquo;s a quirk/feature on a tool that you use daily. This time around, I&rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged git add .. Today I found out the git add --patch, or git add -p for short." />
+Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that every unstaged change should be stagged, git add . will do the job." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.github.io/til/git-add-patch/" />
 <meta property="og:image" content="https://dinispeixoto.github.io/img/image_original.jpg"/>
@@ -150,9 +150,10 @@ Most of the times, I either use git add &lt;file&gt; or if I&rsquo;m sure that e
 
             <div class="post-content">
                 <p>It&rsquo;s always fun when you find something entirely new, especially when it&rsquo;s a quirk/feature on a tool that you use daily. This time around, I&rsquo;ll be writing about <code>git</code>, in particular an option that you can use when stagging content for your next commit.</p>
-<p>Most of the times, I either use <code>git add &lt;file&gt;</code> or if I&rsquo;m sure that every unstaged change should be stagged <code>git add .</code>. Today I found out the <code>git add --patch</code>, or <code>git add -p</code> for short.</p>
-<p>The patch option allows to interactively review every changed file and decide whether it makes sense to add it to the index or not. Feel free to check all the options that are available when using <a href="https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging">Interactive stagging</a>.</p>
+<p>Most of the times, I either use <code>git add &lt;file&gt;</code> or if I&rsquo;m sure that every unstaged change should be stagged, <code>git add .</code> will do the job. Today I found out the patch option: <code>git add --patch</code> or <code>git add -p</code> for short.</p>
+<p>The patch option allows to interactively review every file that was changed. Instead of having to use <code>diff</code> to check what changed and <code>add</code> on the changes that you want to add, by using the <code>patch</code> option you can go through the changes and decide whether it makes sense to add it to the index or not.</p>
 <p><img src="https://dinispeixoto.github.io/img/til/git-add-patch/example.gif" alt="Git add patch example"></p>
+<p>Feel free to check all the options that are available when using <a href="https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging">interactive stagging</a>.</p>
 
             </div>
         </article>
