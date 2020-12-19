@@ -96,6 +96,7 @@
 <p>Particularly during the COVID-19 pandemic, where everyone has been working remotely, having Remote Mob Programming sessions kept the team together. Since there&rsquo;s no in-person interaction during these sessions, we try to take advantage of the live annotations feature to make jokes and have some fun. We lose a bit of focus, but in return, the team feels closer, as if we were working together in-person.</p>
 <p>Every two weeks, the team takes a brief look at performance metrics, like throughput and cycle time. During the switch to Mob Programming, we didn’t see a significant impact on them. Yet, the goal was never to ship code faster, but instead to improve the quality of our deliverables while also sharing knowledge across the team, even if our metrics could be compromised while doing so.</p>
 <p>We would encourage teams to try Mob Programming and evaluate if the pros of adopting it outweigh the cons. We suggest that they start with tasks that tend to demand discussions and brainstorm, as it will have the most impact on those. We are confident that such a methodology is worth trying, and the output can be surprisingly good for any team.</p>
+<p><em>Originally published at <a href="https://www.farfetchtechblog.com">https://www.farfetchtechblog.com</a> on December 16, 2020.</em></p>
 ]]></content>
         </item>
         
