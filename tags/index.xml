@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mob programming</title>
+      <link>https://dinispeixoto.github.io/tags/mob-programming/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/tags/mob-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote mob programming</title>
+      <link>https://dinispeixoto.github.io/tags/remote-mob-programming/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/tags/remote-mob-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software development methodologies</title>
+      <link>https://dinispeixoto.github.io/tags/software-development-methodologies/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/tags/software-development-methodologies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>teamwork</title>
+      <link>https://dinispeixoto.github.io/tags/teamwork/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/tags/teamwork/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -63,15 +99,6 @@
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>til</title>
-      <link>https://dinispeixoto.github.io/tags/til/</link>
-      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.github.io/tags/til/</guid>
       <description></description>
     </item>
     

@@ -3,13 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dinispeixoto.github.io/posts/2020/12/a-years-worth-of-learnings-from-adopting-mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dinispeixoto.github.io/categories/</loc>
-    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.github.io/</loc>
-    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/series/mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/categories/mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/posts/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/remote-mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/series/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/software-development-methodologies/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/teamwork/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,11 +74,6 @@
   
   <url>
     <loc>https://dinispeixoto.github.io/til/git-add-patch/</loc>
-    <lastmod>2020-10-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/tags/</loc>
     <lastmod>2020-10-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -80,10 +125,6 @@
   <url>
     <loc>https://dinispeixoto.github.io/about/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/series/</loc>
   </url>
   
 </urlset>

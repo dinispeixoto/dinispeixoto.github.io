@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>remote mob programming on Dinis Peixoto</title>
+    <link>https://dinispeixoto.github.io/tags/remote-mob-programming/</link>
+    <description>Recent content in remote mob programming on Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dinispeixoto.github.io/tags/remote-mob-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A year&#39;s worth of learnings from adopting Mob programming</title>
+      <link>https://dinispeixoto.github.io/posts/2020/12/a-years-worth-of-learnings-from-adopting-mob-programming/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/posts/2020/12/a-years-worth-of-learnings-from-adopting-mob-programming/</guid>
+      <description>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</description>
+    </item>
+    
+  </channel>
+</rss>
