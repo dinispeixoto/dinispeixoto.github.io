@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Force Python to release memory</title>
+      <link>https://dinispeixoto.github.io/til/force-python-to-release-memory/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/til/force-python-to-release-memory/</guid>
+      <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
+    </item>
     
     <item>
       <title>A year&#39;s worth of learnings from adopting Mob programming</title>

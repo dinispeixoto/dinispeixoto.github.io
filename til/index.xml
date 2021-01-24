@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Force Python to release memory</title>
+      <link>https://dinispeixoto.github.io/til/force-python-to-release-memory/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.github.io/til/force-python-to-release-memory/</guid>
+      <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
+    </item>
+    
+    <item>
       <title>Git Add Patch</title>
       <link>https://dinispeixoto.github.io/til/git-add-patch/</link>
       <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>

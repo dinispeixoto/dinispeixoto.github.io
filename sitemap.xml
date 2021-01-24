@@ -3,17 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dinispeixoto.github.io/posts/2020/12/a-years-worth-of-learnings-from-adopting-mob-programming/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dinispeixoto.github.io/categories/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.github.io/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/til/force-python-to-release-memory/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/memory/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/process/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/python/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/categories/python/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/tags/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.github.io/posts/2020/12/a-years-worth-of-learnings-from-adopting-mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,11 +79,6 @@
   
   <url>
     <loc>https://dinispeixoto.github.io/tags/software-development-methodologies/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.github.io/tags/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   

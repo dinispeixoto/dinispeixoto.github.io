@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory." />
+<meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, python, memory, process" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.github.io/til/force-python-to-release-memory/" />
+
+
+    <title>
+        
+            Force Python to release memory :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.github.io/main.c110f615466e192f7db70077bf157debd7640e7804cd35f5d8828013c6c9d042.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Force Python to release memory">
+<meta itemprop="description" content="Let me start by clarifying that there are far better solutions to manage Python&rsquo;s memory other than the one I&rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.">
+<meta itemprop="datePublished" content="2021-01-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="418">
+<meta itemprop="image" content="https://dinispeixoto.github.io/img/image_original.jpg"/>
+
+
+
+<meta itemprop="keywords" content="python,memory,process," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.github.io/img/image_original.jpg"/>
+
+<meta name="twitter:title" content="Force Python to release memory"/>
+<meta name="twitter:description" content="Let me start by clarifying that there are far better solutions to manage Python&rsquo;s memory other than the one I&rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory."/>
+
+
+
+    <meta property="og:title" content="Force Python to release memory" />
+<meta property="og:description" content="Let me start by clarifying that there are far better solutions to manage Python&rsquo;s memory other than the one I&rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.github.io/til/force-python-to-release-memory/" />
+<meta property="og:image" content="https://dinispeixoto.github.io/img/image_original.jpg"/>
+<meta property="article:published_time" content="2021-01-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-23T00:00:00+00:00" />
+
+
+
+
+    <meta property="article:section" content="python" />
+
+
+
+    <meta property="article:published_time" content="2021-01-23 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.github.io/about/">about me</a></li><li><a href="https://dinispeixoto.github.io/posts/">posts</a></li><li><a href="https://dinispeixoto.github.io/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.github.io/til/force-python-to-release-memory/">Force Python to release memory</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Let me start by clarifying that there are far better solutions to manage Python&rsquo;s memory other than the one I&rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</p>
+<p>The issue started when loading the second pickle object, as for some reason, Python was not deallocating the memory from the first pickle object, thus exceeding all the memory available.</p>
+<p>I started by deleting the object - <code>del</code> - and forcing the garbage collector to run rightaway - <code>gc.collect()</code> - after processing each object, to make sure there was room available for the next one. However, due to memory optimizations, the memory that a Python application uses might not be available right away. Once the memory is allocated, even if all the references are freed, some objects (e.g. lists) might still be available for reuse, avoiding having to allocate the memory again later on. While it can be useful for most situations, especially when we are not dealing with large objects, it can also be a nightmare if we want to actually discard the allocated memory after processing a particular pickle file.</p>
+<p>After a while, I found out that one common solution is to create large objects within a child process as the memory will be released once the process is finished. It turned out to be the perfect solution, each pickle object would be loaded and processed on its own process, not impacting the pickle objects that come next.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>load_pickle, args<span style="color:#f92672">=</span>(pickle_filename,))
+process<span style="color:#f92672">.</span>start()
+process<span style="color:#f92672">.</span>join()
+</code></pre></div><h3 id="bonus-part">Bonus part</h3>
+<p>As processes don&rsquo;t share memory, I took advantage of the <a href="https://docs.python.org/3/library/multiprocessing.html#managers">multiprocessing.Manager</a> class to create a proxy list. The goal was to create a dictionary with some of the data contained on the different processed pickle objects. Due to the large size of data that had to be processed, using a proxy dictionary would require millions of operations being locked - slowing down the application.</p>
+<p>A better solution was to use a proxy list, so that each process creates its own dictionary and, once all the pickle objects are processed, all the dictionaries on the list can be merged into a single one - only one operation per process needs to be locked when using this alternative.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">manager <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Manager()
+shared_list_of_dictionaries <span style="color:#f92672">=</span> manager<span style="color:#f92672">.</span>list()
+
+process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>load_pickle, args<span style="color:#f92672">=</span>(pickle_filename, shared_list_of_dictionaries))
+process<span style="color:#f92672">.</span>start()
+process<span style="color:#f92672">.</span>join()
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://dinispeixoto.github.io/tags/python">python</a></span><span class="tag"><a href="https://dinispeixoto.github.io/tags/memory">memory</a></span><span class="tag"><a href="https://dinispeixoto.github.io/tags/process">process</a></span>
+  				</p>
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://dinispeixoto.github.io">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.github.io/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
