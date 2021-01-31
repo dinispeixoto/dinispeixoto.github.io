@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Dinis Peixoto</title>
-    <link>https://dinispeixoto.github.io/categories/</link>
+    <link>https://dinispeixoto.com/categories/</link>
     <description>Recent content in Categories on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://dinispeixoto.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dinispeixoto.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python</title>
-      <link>https://dinispeixoto.github.io/categories/python/</link>
+      <link>https://dinispeixoto.com/categories/python/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.github.io/categories/python/</guid>
+      <guid>https://dinispeixoto.com/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mob Programming</title>
-      <link>https://dinispeixoto.github.io/categories/mob-programming/</link>
+      <link>https://dinispeixoto.com/categories/mob-programming/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.github.io/categories/mob-programming/</guid>
+      <guid>https://dinispeixoto.com/categories/mob-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://dinispeixoto.github.io/categories/git/</link>
+      <link>https://dinispeixoto.com/categories/git/</link>
       <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.github.io/categories/git/</guid>
+      <guid>https://dinispeixoto.com/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web development</title>
-      <link>https://dinispeixoto.github.io/categories/web-development/</link>
+      <link>https://dinispeixoto.com/categories/web-development/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.github.io/categories/web-development/</guid>
+      <guid>https://dinispeixoto.com/categories/web-development/</guid>
       <description></description>
     </item>
     
