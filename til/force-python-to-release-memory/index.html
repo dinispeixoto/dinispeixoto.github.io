@@ -25,7 +25,7 @@
 
 
 
-<link rel="stylesheet" href="https://dinispeixoto.com/main.c110f615466e192f7db70077bf157debd7640e7804cd35f5d8828013c6c9d042.css">
+<link rel="stylesheet" href="https://dinispeixoto.com/main.624ad558679cfeb806fb28965f404b63abd3fcd6f72bac02217cf78223a703c4.css">
 
 
 
@@ -45,7 +45,7 @@
 <meta itemprop="description" content="Let me start by clarifying that there are far better solutions to manage Python&rsquo;s memory other than the one I&rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.">
 <meta itemprop="datePublished" content="2021-01-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-01-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="418">
+<meta itemprop="wordCount" content="430">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -66,6 +66,7 @@
 <meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 <meta property="article:published_time" content="2021-01-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-23T00:00:00+00:00" />
+
 
 
 
@@ -149,7 +150,10 @@
 <p>The issue started when loading the second pickle object, as for some reason, Python was not deallocating the memory from the first pickle object, thus exceeding all the memory available.</p>
 <p>I started by deleting the object - <code>del</code> - and forcing the garbage collector to run rightaway - <code>gc.collect()</code> - after processing each object, to make sure there was room available for the next one. However, due to memory optimizations, the memory that a Python application uses might not be available right away. Once the memory is allocated, even if all the references are freed, some objects (e.g. lists) might still be available for reuse, avoiding having to allocate the memory again later on. While it can be useful for most situations, especially when we are not dealing with large objects, it can also be a nightmare if we want to actually discard the allocated memory after processing a particular pickle file.</p>
 <p>After a while, I found out that one common solution is to create large objects within a child process as the memory will be released once the process is finished. It turned out to be the perfect solution, each pickle object would be loaded and processed on its own process, not impacting the pickle objects that come next.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>load_pickle, args<span style="color:#f92672">=</span>(pickle_filename,))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(
+  target <span style="color:#f92672">=</span> load_pickle,
+  args <span style="color:#f92672">=</span> (pickle_filename,)
+)
 process<span style="color:#f92672">.</span>start()
 process<span style="color:#f92672">.</span>join()
 </code></pre></div><h3 id="bonus-part">Bonus part</h3>
@@ -158,7 +162,10 @@ process<span style="color:#f92672">.</span>join()
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">manager <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Manager()
 shared_list_of_dictionaries <span style="color:#f92672">=</span> manager<span style="color:#f92672">.</span>list()
 
-process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>load_pickle, args<span style="color:#f92672">=</span>(pickle_filename, shared_list_of_dictionaries))
+process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(
+  target <span style="color:#f92672">=</span> load_pickle,
+  args <span style="color:#f92672">=</span> (pickle_filename, shared_list_of_dictionaries)
+)
 process<span style="color:#f92672">.</span>start()
 process<span style="color:#f92672">.</span>join()
 </code></pre></div>
