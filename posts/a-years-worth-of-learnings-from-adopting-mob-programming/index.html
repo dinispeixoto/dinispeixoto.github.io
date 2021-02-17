@@ -1,22 +1,159 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Dinis Peixoto</title>
-        <link>https://dinispeixoto.com/posts/</link>
-        <description>Recent content in Posts on Dinis Peixoto</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://dinispeixoto.com/posts/index.xml" rel="self" type="application/rss+xml" />
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver." />
+<meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, mob programming, remote mob programming, software development methodologies, teamwork" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/" />
+
+
+    <title>
         
-        <item>
-            <title>A year&#39;s worth of learnings from adopting Mob programming</title>
-            <link>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</link>
-            <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+            A year&#39;s worth of learnings from adopting Mob programming :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.be0fcbf0302da5eca6ed322a4d73a744827373bf15a8549739951e117d1ccb98.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="A year&#39;s worth of learnings from adopting Mob programming">
+<meta itemprop="description" content="At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.">
+<meta itemprop="datePublished" content="2020-12-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2349">
+<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+
+
+<meta itemprop="keywords" content="mob programming,remote mob programming,software development methodologies,teamwork," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+<meta name="twitter:title" content="A year&#39;s worth of learnings from adopting Mob programming"/>
+<meta name="twitter:description" content="At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver."/>
+
+
+
+    <meta property="og:title" content="A year&#39;s worth of learnings from adopting Mob programming" />
+<meta property="og:description" content="At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/" />
+<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="article:published_time" content="2020-12-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-19T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="Mob Programming" />
+
+
+
+    <meta property="article:published_time" content="2020-12-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
             
-            <guid>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</guid>
-            <description>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</description>
-            <content type="html"><![CDATA[<p>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</p>
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        12 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/">A year&rsquo;s worth of learnings from adopting Mob programming</a>
+      </h1>
+
+      
+
+      
+
+      <div class="post-content">
+        <p>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</p>
 <p>A year ago, our team was first introduced to <a href="https://mobprogramming.org/">Mob Programming</a>, and we have been using it since then. The concept that was once hard to fathom is now the go-to approach when dealing with most of our sprint tasks. Although being able to use Mob Programming daily has come with many different types of challenges, the results have been surprisingly good.</p>
 <h2 id="whats-mob-programming">What&rsquo;s Mob Programming?</h2>
 <p>When using Mob Programming, instead of having each team element working on its own task, the whole team gathers together to tackle the same task. It includes using a single workstation and only one person typing - <em>the Driver</em> - while the remaining people are describing the path that should be taken.</p>
@@ -27,7 +164,7 @@
 <p>Yet, having an entire team working on the same problem brings its own challenges. It&rsquo;s imperative that the team establishes a set of well-defined procedures and rules. Furthermore, Mob Programming may not be suitable for all kinds of tasks or teams. Depending on the task the team is tackling, it should first be established whether Mob, Pair or Solo Programming is the appropriate methodology. None of the three is suitable for all situations. It&rsquo;s up to the teams to give them a try and figure out when to use them.</p>
 <h2 id="how-does-it-work">How does it work?</h2>
 <p>A typical Mob Programming setup consists of moving the team to an isolated space (e.g. a meeting room) and bringing one computer that should be connected to either a large monitor or a projector. Having a whiteboard to write down possible solutions and describe the next steps is great to empower collaborative brainstorming. Seats and tables for everyone is a must, as everyone should be comfortable during the session, this is particularly relevant as these sessions tend to be time-consuming. Since the beginning of the Covid-19 pandemic, we have adapted our ways of working to facilitate <a href="https://www.remotemobprogramming.org/">Remote Mob Programming</a> sessions - but more to come on that later.</p>
-<p><img src="/img/posts/mob/mob.png" alt="Environment & Setup"></p>
+<p><img src="https://dinispeixoto.com/img/posts/mob/mob.png" alt="Environment & Setup"></p>
 <p>Two key roles must be considered when using Mob Programming: the Driver and the Navigator. The Driver is the person at the keyboard, responsible for moving the codebase forward. The Navigator understands what the group has decided to aim for and provides instructions to the Driver. The Navigator shouldn&rsquo;t dictate the actual code that the Driver has to write down, only the expected solution. Sometimes, the Navigator role may not be needed. It is up to the Driver to opt-in or out. Nonetheless, when there&rsquo;s no Navigator, the Driver may get lost by having multiple people explaining what to do. These roles should rotate between all team members at regular intervals (usually monitored by a timer).</p>
 <p>The session should be held continuously until the task is done. Quick breaks, like coffee or bathroom, are allowed and shouldn&rsquo;t require the session to stop. Some longer breaks like lunch must be agreed between the team so that everyone does it at the same time to prevent distractions and absences.</p>
 <h2 id="what-about-productivity">What about productivity?</h2>
@@ -97,8 +234,114 @@
 <p>Every two weeks, the team takes a brief look at performance metrics, like throughput and cycle time. During the switch to Mob Programming, we didn’t see a significant impact on them. Yet, the goal was never to ship code faster, but instead to improve the quality of our deliverables while also sharing knowledge across the team, even if our metrics could be compromised while doing so.</p>
 <p>We would encourage teams to try Mob Programming and evaluate if the pros of adopting it outweigh the cons. We suggest that they start with tasks that tend to demand discussions and brainstorm, as it will have the most impact on those. We are confident that such a methodology is worth trying, and the output can be surprisingly good for any team.</p>
 <p><em>Originally published at <a href="https://www.farfetchtechblog.com">https://www.farfetchtechblog.com</a> on December 16, 2020.</em></p>
-]]></content>
-        </item>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/mob-programming/">mob programming</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/remote-mob-programming/">remote mob programming</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/software-development-methodologies/">software development methodologies</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/teamwork/">teamwork</a></span>
         
-    </channel>
-</rss>
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/mob-programming/">Mob Programming</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2349 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-12-19 00:00 &#43;0000
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
