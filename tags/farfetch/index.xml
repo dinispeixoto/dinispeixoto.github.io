@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>farfetch on Dinis Peixoto</title>
+    <link>https://dinispeixoto.com/tags/farfetch/</link>
+    <description>Recent content in farfetch on Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dinispeixoto.com/tags/farfetch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Brand Recommendations - TF-IDF</title>
+      <link>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</guid>
+      <description>I have been trying to learn Machine Learning for quite some time now. The main motivation for this was the fact that, at FARFETCH, I work really close to a data science team and wanted to get a grasp of the main challenges that they have to face on a daily basis.
+It all started with a couple of online courses. The thing with these courses is that you get to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.</description>
+    </item>
+    
+    <item>
+      <title>A year&#39;s worth of learnings from adopting Mob programming</title>
+      <link>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</guid>
+      <description>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>brand recommendations</title>
+      <link>https://dinispeixoto.com/tags/brand-recommendations/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/brand-recommendations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cosine similarity</title>
+      <link>https://dinispeixoto.com/tags/cosine-similarity/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/cosine-similarity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>farfetch</title>
+      <link>https://dinispeixoto.com/tags/farfetch/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/farfetch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://dinispeixoto.com/tags/machine-learning/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mle</title>
+      <link>https://dinispeixoto.com/tags/mle/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/mle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tfidf</title>
+      <link>https://dinispeixoto.com/tags/tfidf/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/tfidf/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>memory</title>
@@ -45,60 +99,6 @@
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/mob-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>remote mob programming</title>
-      <link>https://dinispeixoto.com/tags/remote-mob-programming/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/remote-mob-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>software development methodologies</title>
-      <link>https://dinispeixoto.com/tags/software-development-methodologies/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/software-development-methodologies/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>teamwork</title>
-      <link>https://dinispeixoto.com/tags/teamwork/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/teamwork/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://dinispeixoto.com/tags/git/</link>
-      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dnt</title>
-      <link>https://dinispeixoto.com/tags/dnt/</link>
-      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/dnt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>do not track</title>
-      <link>https://dinispeixoto.com/tags/do-not-track/</link>
-      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/do-not-track/</guid>
       <description></description>
     </item>
     
