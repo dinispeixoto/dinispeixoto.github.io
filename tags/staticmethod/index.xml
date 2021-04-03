@@ -19,7 +19,7 @@
       
       <guid>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</guid>
       <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&amp;rsquo;s consider the example below of an Example python class, with a method, a static method and a class method.</description>
+Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
 <meta name="description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&amp;rsquo;s consider the example below of an Example python class, with a method, a static method and a class method." />
+Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method)." />
 <meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, python, oop, staticmethod, classmethod" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -44,10 +44,10 @@ Let&amp;rsquo;s consider the example below of an Example python class, with a me
 
 <meta itemprop="name" content="@staticmethod vs @classmethod">
 <meta itemprop="description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method.">
+Let&rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).">
 <meta itemprop="datePublished" content="2021-04-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-04-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="300">
+<meta itemprop="wordCount" content="295">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -58,13 +58,13 @@ Let&rsquo;s consider the example below of an Example python class, with a method
 
 <meta name="twitter:title" content="@staticmethod vs @classmethod"/>
 <meta name="twitter:description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method."/>
+Let&rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method)."/>
 
 
 
     <meta property="og:title" content="@staticmethod vs @classmethod" />
 <meta property="og:description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method." />
+Let&rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.com/til/staticmethod-vs-classmethod/" />
 <meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
@@ -149,7 +149,7 @@ Let&rsquo;s consider the example below of an Example python class, with a method
 
             <div class="post-content">
                 <p>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: <code>@staticmethod</code> and <code>@classmethod</code>.</p>
-<p>Let&rsquo;s consider the example below of an <code>Example</code> python class, with a method, a static method and a class method.</p>
+<p>Let&rsquo;s consider the example below of an <code>Example</code> python class, with a method (<code>method</code>), a static method (<code>static_method</code>) and a class method (<code>class_method</code>).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
     
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method</span>(self, param):
@@ -165,23 +165,17 @@ Let&rsquo;s consider the example below of an Example python class, with a method
 </code></pre></div><ul>
 <li>
 <p><code>method</code>: usual class method, it will implicitly receive the instance of the class as the first argument (<code>self</code>) of the method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
-
-example<span style="color:#f92672">.</span>method(<span style="color:#e6db74">&#39;text&#39;</span>) <span style="color:#75715e"># &lt;__main__.Example object at 0x11044be80&gt; text</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Example()<span style="color:#f92672">.</span>method(<span style="color:#e6db74">&#39;text&#39;</span>) <span style="color:#75715e"># &lt;__main__.Example object at 0x11044be80&gt; text</span>
 </code></pre></div></li>
 <li>
 <p><code>static_method</code>: a static method doesn&rsquo;t receive an implicit first argument. It can be called with an instance of the class or the class itself. Static methods in python behave just like any other module function, except that they are now part of the class context. It&rsquo;s like putting a function into a class since it may logically belong there, while indicating that the method doesn&rsquo;t require access to the class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
-
-Example<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># text</span>
-example<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># text </span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Example<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>)   <span style="color:#75715e"># text</span>
+Example()<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>) <span style="color:#75715e"># text </span>
 </code></pre></div></li>
 <li>
-<p><code>class_method</code>: among the three, the class method is the least common. It will implicitly receive the class as the first argument. While an instance method receives the instance of the class, the class method will always receive the class itself whether it was called through the class or an instance of the class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
-
-Example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
-example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
+<p><code>class_method</code>: among the three, the class method is the least common. It will implicitly receive the class (<code>cls</code>) as the first argument. While an instance method receives the instance of the class, the class method will always receive the class itself whether it was called through the class or an instance of the class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>)   <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
+Example()<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>) <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
 </code></pre></div><p>Class methods are commonly used as factory methods, e.g.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
 
@@ -194,7 +188,7 @@ example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db
 
 
 example <span style="color:#f92672">=</span> Example<span style="color:#f92672">.</span>from_string(<span style="color:#e6db74">&#34;hello world&#34;</span>)
-<span style="color:#66d9ef">print</span>(example<span style="color:#f92672">.</span>text)    <span style="color:#75715e"># hello world</span>
+<span style="color:#66d9ef">print</span>(example<span style="color:#f92672">.</span>text) <span style="color:#75715e"># hello world</span>
 </code></pre></div></li>
 </ul>
 
