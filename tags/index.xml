@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>classmethod</title>
+      <link>https://dinispeixoto.com/tags/classmethod/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/classmethod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>https://dinispeixoto.com/tags/oop/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://dinispeixoto.com/tags/python/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>staticmethod</title>
+      <link>https://dinispeixoto.com/tags/staticmethod/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/staticmethod/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>brand recommendations</title>
@@ -63,42 +99,6 @@
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/tfidf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>memory</title>
-      <link>https://dinispeixoto.com/tags/memory/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/memory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>process</title>
-      <link>https://dinispeixoto.com/tags/process/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/process/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://dinispeixoto.com/tags/python/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mob programming</title>
-      <link>https://dinispeixoto.com/tags/mob-programming/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/mob-programming/</guid>
       <description></description>
     </item>
     

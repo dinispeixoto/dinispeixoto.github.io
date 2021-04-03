@@ -178,7 +178,7 @@ brands <span style="color:#f92672">=</span> db<span style="color:#f92672">.</spa
 filtered_brand_ids <span style="color:#f92672">=</span> [brand[<span style="color:#e6db74">&#39;brandId&#39;</span>]) <span style="color:#66d9ef">for</span> brand <span style="color:#f92672">in</span> brands]
 
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Total filtered brands: {len(filtered_brand_ids)}&#34;</span>)
-</code></pre></div><p>As soon as we have the brands that will be evaluated by our model, it&rsquo;s time to gather the descriptions for their products using up to 20000 products for each brand. A CSV file is created with the brand identifiers (id and name) and their corresponding description - i.e. the result of merging the descriptions from their products.</p>
+</code></pre></div><p>As soon as we have the brands that will be evaluated by our model, it&rsquo;s time to gather the descriptions from up to 20000 of their products. A CSV file is created with the brand identifiers (id and name) and their corresponding description - i.e. the result of merging the descriptions from their products.</p>
 <p>Keep in mind that concatenating all the product descriptions into a single brand description is naïve. In the future, we should reconsider and replace it with a better strategy.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
 
@@ -214,7 +214,7 @@ f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;bran
 f<span style="color:#f92672">.</span>close()
 </code></pre></div><h3 id="preparing-the-data">Preparing the data</h3>
 <p>You might have noticed that each brand description is processed right before being written to the resulting CSV file.</p>
-<p>There was nothing special when it comes to preparing the data. We are just replacing some special characters on the product descriptions to avoid having them on the final brand description, as they don&rsquo;t add any value to the final description. When training the model, we will also make sure to remove the most common English words (e.g. <em>a</em>, <em>or</em>, <em>the</em>) since they don&rsquo;t add any value either.</p>
+<p>There was nothing special when it comes to preparing the data. We are just replacing some special characters on the product descriptions to avoid having them on the final brand description, as they don&rsquo;t add any value. When training the model, we will also make sure to remove the most common English words (e.g. <em>a</em>, <em>or</em>, <em>the</em>) since they don&rsquo;t add any value either.</p>
 <p>Finally, we convert all the text to lowercase since terms like <em>Red</em>, and <em>red</em> shouldn&rsquo;t be any different.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 
@@ -289,9 +289,9 @@ cosine_similarities <span style="color:#f92672">=</span> linear_kernel(tfidf_mat
 <ol>
 <li><strong>Nike</strong> and <strong>Jordan</strong> is really interesting since they belong to the same parent company. Also, Nike recommendations seem to be decent, to say the least.</li>
 <li>Sister brands are recommended together, e.g. multiple <strong>Adidas collaborations</strong>, <strong>COMME DES GARÇONS</strong>.</li>
-<li>Great to see that every recommendation for <strong>Tommy Junior</strong> is indeed a Junior/Kids brands.</li>
+<li>Great to see that every recommendation for <strong>Tommy Junior</strong> is indeed a Junior/Kids brand.</li>
 <li><strong>Gucci</strong> and other related (I mean <em>expensive</em>) brands also together - <strong>Versace</strong>, <strong>Givenchy</strong>, <strong>Balenciaga</strong>, <strong>Prada</strong> and <strong>Burberry</strong>.</li>
-<li>I only own 2 shoe brands: <strong>Adidas</strong> and <strong>Veja</strong>, so I&rsquo;m quite happy with the Adidas recommendations even without Nike there.</li>
+<li>I only own 2 shoe brands: <strong>Adidas</strong> and <strong>Veja</strong>, so I&rsquo;m quite happy with the Adidas recommendations even without Nike being there.</li>
 <li>Every recommendation for <strong>Rayban</strong> is also an eyewear brand.</li>
 </ol>
 <h2 id="conclusion-and-next-steps">Conclusion and next steps</h2>
