@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
+Let&amp;rsquo;s consider the example below of an Example python class, with a method, a static method and a class method." />
+<meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, python, oop, staticmethod, classmethod" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/til/staticmethod-vs-classmethod/" />
+
+
+    <title>
+        
+            @staticmethod vs @classmethod :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.ae882888efdfe270720245beed0f50838debe778b75c1df507f4ecf20e9ea7ec.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="@staticmethod vs @classmethod">
+<meta itemprop="description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
+Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method.">
+<meta itemprop="datePublished" content="2021-04-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-04-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="300">
+<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+
+
+<meta itemprop="keywords" content="python,oop,staticmethod,classmethod," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+<meta name="twitter:title" content="@staticmethod vs @classmethod"/>
+<meta name="twitter:description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
+Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method."/>
+
+
+
+    <meta property="og:title" content="@staticmethod vs @classmethod" />
+<meta property="og:description" content="Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
+Let&rsquo;s consider the example below of an Example python class, with a method, a static method and a class method." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/til/staticmethod-vs-classmethod/" />
+<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="article:published_time" content="2021-04-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-03T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="python" />
+
+
+
+    <meta property="article:published_time" content="2021-04-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/staticmethod-vs-classmethod/">@staticmethod vs @classmethod</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: <code>@staticmethod</code> and <code>@classmethod</code>.</p>
+<p>Let&rsquo;s consider the example below of an <code>Example</code> python class, with a method, a static method and a class method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method</span>(self, param):
+       <span style="color:#66d9ef">print</span>(self, param) 
+
+    <span style="color:#a6e22e">@staticmethod</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">static_method</span>(param):
+       <span style="color:#66d9ef">print</span>(param) 
+
+    <span style="color:#a6e22e">@classmethod</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">class_method</span>(cls, param):
+       <span style="color:#66d9ef">print</span>(cls, param) 
+</code></pre></div><ul>
+<li>
+<p><code>method</code>: usual class method, it will implicitly receive the instance of the class as the first argument (<code>self</code>) of the method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
+
+example<span style="color:#f92672">.</span>method(<span style="color:#e6db74">&#39;text&#39;</span>) <span style="color:#75715e"># &lt;__main__.Example object at 0x11044be80&gt; text</span>
+</code></pre></div></li>
+<li>
+<p><code>static_method</code>: a static method doesn&rsquo;t receive an implicit first argument. It can be called with an instance of the class or the class itself. Static methods in python behave just like any other module function, except that they are now part of the class context. It&rsquo;s like putting a function into a class since it may logically belong there, while indicating that the method doesn&rsquo;t require access to the class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
+
+Example<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># text</span>
+example<span style="color:#f92672">.</span>static_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># text </span>
+</code></pre></div></li>
+<li>
+<p><code>class_method</code>: among the three, the class method is the least common. It will implicitly receive the class as the first argument. While an instance method receives the instance of the class, the class method will always receive the class itself whether it was called through the class or an instance of the class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">example <span style="color:#f92672">=</span> Example()
+
+Example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
+example<span style="color:#f92672">.</span>class_method(<span style="color:#e6db74">&#39;text&#39;</span>)    <span style="color:#75715e"># &lt;class &#39;__main__.Example&#39;&gt; text</span>
+</code></pre></div><p>Class methods are commonly used as factory methods, e.g.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
+
+    <span style="color:#66d9ef">def</span> __init__(self, text):
+        self<span style="color:#f92672">.</span>text <span style="color:#f92672">=</span> text
+
+    <span style="color:#a6e22e">@classmethod</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">from_string</span>(cls, text):
+        <span style="color:#66d9ef">return</span> cls(text)
+
+
+example <span style="color:#f92672">=</span> Example<span style="color:#f92672">.</span>from_string(<span style="color:#e6db74">&#34;hello world&#34;</span>)
+<span style="color:#66d9ef">print</span>(example<span style="color:#f92672">.</span>text)    <span style="color:#75715e"># hello world</span>
+</code></pre></div></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/python/">python</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/oop/">oop</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/staticmethod/">staticmethod</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/classmethod/">classmethod</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/python/">python</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
