@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>__new__ vs __init__</title>
-      <link>https://dinispeixoto.com/til/__new__-vs-__init__/</link>
+      <title>new vs init</title>
+      <link>https://dinispeixoto.com/til/new-vs-init/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.com/til/__new__-vs-__init__/</guid>
+      <guid>https://dinispeixoto.com/til/new-vs-init/</guid>
       <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
 class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
     </item>
