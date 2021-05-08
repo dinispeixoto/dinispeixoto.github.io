@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>__new__ vs __init__</title>
+      <link>https://dinispeixoto.com/til/__new__-vs-__init__/</link>
+      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/__new__-vs-__init__/</guid>
+      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
+class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
+    </item>
     
     <item>
       <title>@staticmethod vs @classmethod</title>
