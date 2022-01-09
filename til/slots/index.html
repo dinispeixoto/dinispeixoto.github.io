@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
 <meta name="description" content="Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation." />
+class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class." />
 <meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, python, oop" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -44,10 +44,10 @@ class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 1
 
 <meta itemprop="name" content="Benefits of using `__slots__`">
 <meta itemprop="description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation.">
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.">
 <meta itemprop="datePublished" content="2021-10-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-10-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="147">
+<meta itemprop="wordCount" content="152">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -58,13 +58,13 @@ class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The sp
 
 <meta name="twitter:title" content="Benefits of using `__slots__`"/>
 <meta name="twitter:description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation."/>
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class."/>
 
 
 
     <meta property="og:title" content="Benefits of using `__slots__`" />
 <meta property="og:description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation." />
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.com/til/slots/" />
 <meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
@@ -155,7 +155,7 @@ class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The sp
 foo <span style="color:#f92672">=</span> Example()
 foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
 foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><p>The special attribute <code>__slots_</code> works as an alternative to <code>__dict__</code> as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation.</p>
+</code></pre></div><p>The special attribute <code>__slots_</code> works as an alternative to <code>__dict__</code> as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
     __slots__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>
     <span style="color:#f92672">...</span>
