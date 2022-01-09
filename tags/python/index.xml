@@ -7,13 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>new vs init</title>
+      <title>Benefits of using `__slots__`</title>
+      <link>https://dinispeixoto.com/til/slots/</link>
+      <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/slots/</guid>
+      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
+class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation.</description>
+    </item>
+    
+    <item>
+      <title>`__new__` vs `__init__`</title>
       <link>https://dinispeixoto.com/til/new-vs-init/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       

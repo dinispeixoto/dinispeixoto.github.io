@@ -5,17 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
-<meta name="description" content="If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:" />
+<meta name="description" content="Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
+class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation." />
 <meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, python, oop" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://dinispeixoto.com/til/new-vs-init/" />
+<link rel="canonical" href="https://dinispeixoto.com/til/slots/" />
 
 
     <title>
         
-            `__new__` vs `__init__` :: Dinis Peixoto 
+            Benefits of using `__slots__` :: Dinis Peixoto 
         
     </title>
 
@@ -42,12 +42,12 @@ class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The i
 
 
 
-<meta itemprop="name" content="`__new__` vs `__init__`">
-<meta itemprop="description" content="If you&rsquo;re familiar with OOP, I&rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:">
-<meta itemprop="datePublished" content="2021-05-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-05-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="183">
+<meta itemprop="name" content="Benefits of using `__slots__`">
+<meta itemprop="description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation.">
+<meta itemprop="datePublished" content="2021-10-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="147">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -56,20 +56,20 @@ class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The i
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
-<meta name="twitter:title" content="`__new__` vs `__init__`"/>
-<meta name="twitter:description" content="If you&rsquo;re familiar with OOP, I&rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:"/>
+<meta name="twitter:title" content="Benefits of using `__slots__`"/>
+<meta name="twitter:description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation."/>
 
 
 
-    <meta property="og:title" content="`__new__` vs `__init__`" />
-<meta property="og:description" content="If you&rsquo;re familiar with OOP, I&rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:" />
+    <meta property="og:title" content="Benefits of using `__slots__`" />
+<meta property="og:description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dinispeixoto.com/til/new-vs-init/" />
+<meta property="og:url" content="https://dinispeixoto.com/til/slots/" />
 <meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
-<meta property="article:published_time" content="2021-05-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-05-08T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-10-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-09T00:00:00+00:00" />
 
 
 
@@ -79,7 +79,7 @@ class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The i
 
 
 
-    <meta property="article:published_time" content="2021-05-08 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2021-10-09 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -141,31 +141,30 @@ class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The i
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://dinispeixoto.com/til/new-vs-init/"><code>__new__</code> vs <code>__init__</code></a></h2>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/slots/">Benefits of using <code>__slots__</code></a></h2>
 
             
             
             
 
             <div class="post-content">
-                <p>If you&rsquo;re familiar with OOP, I&rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an <code>__init__</code> method is usually declared to initialize the attributes of the class.</p>
+                <p>Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (<code>__dict__</code>) for a given class instance.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, foo, bar):
-        self<span style="color:#f92672">.</span>foo <span style="color:#f92672">=</span> foo
-        self<span style="color:#f92672">.</span>bar <span style="color:#f92672">=</span> bar
-</code></pre></div><p>The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</p>
-<ul>
-<li><code>__new__</code>: called first and responsible for returning a new instance of the class</li>
-<li><code>__init__</code>: doesn&rsquo;t return anything, it&rsquo;s only responsible for initializing the instance after it has been created</li>
-</ul>
-<p>Note that while the <code>__init__</code> method receives the argument <code>self</code>, the <code>__new__</code> method receives the class (<code>cls</code>). Receiving <code>self</code> as an argument implies that a new object has already been created by the time <code>__init__</code> is called. On the other hand, the class (<code>cls</code>) can be used to create a new object (e.g. <code>object.__new__(cls)</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
-    <span style="color:#66d9ef">def</span> __init__(self):
-        <span style="color:#f92672">...</span>
+    <span style="color:#f92672">...</span>
 
-    <span style="color:#66d9ef">def</span> __new__(cls):
-        <span style="color:#f92672">...</span>
-</code></pre></div>
+foo <span style="color:#f92672">=</span> Example()
+foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
+foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><p>The special attribute <code>__slots_</code> works as an alternative to <code>__dict__</code> as when explicitly stated in the class definition, it allows you to define the instance attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
+    __slots__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>
+    <span style="color:#f92672">...</span>
+
+foo <span style="color:#f92672">=</span> Example()
+foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
+foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>        <span style="color:#75715e"># AttributeError</span>
+</code></pre></div><p>The benefits of doing this is that, since you no longer need a dictionary to hold you instance variables, you will end up with <strong>faster attribute access</strong> and <strong>space savings in memory</strong>.</p>
+
             </div>
         </article>
 

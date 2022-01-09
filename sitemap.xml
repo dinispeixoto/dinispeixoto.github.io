@@ -3,47 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dinispeixoto.com/til/slots/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dinispeixoto.com/categories/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/til/new-vs-init/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/tags/oop/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/tags/python/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/categories/python/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/series/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/tags/</loc>
-    <lastmod>2021-05-08T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://dinispeixoto.com/series/til/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/til/new-vs-init/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
   </url>
   
