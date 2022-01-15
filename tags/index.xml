@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data</title>
+      <link>https://dinispeixoto.com/tags/data/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>databases</title>
+      <link>https://dinispeixoto.com/tags/databases/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/databases/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>oop</title>
@@ -81,24 +99,6 @@
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mle</title>
-      <link>https://dinispeixoto.com/tags/mle/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/mle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tfidf</title>
-      <link>https://dinispeixoto.com/tags/tfidf/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/tfidf/</guid>
       <description></description>
     </item>
     

@@ -7,53 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>python</title>
-      <link>https://dinispeixoto.com/categories/python/</link>
+      <title>Data Engineering</title>
+      <link>https://dinispeixoto.com/categories/data-engineering/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/categories/data-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>https://dinispeixoto.com/categories/software-engineering/</link>
       <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.com/categories/python/</guid>
+      <guid>https://dinispeixoto.com/categories/software-engineering/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Brand Recommendations</title>
-      <link>https://dinispeixoto.com/categories/brand-recommendations/</link>
+      <title>Machine Learning Engineering</title>
+      <link>https://dinispeixoto.com/categories/machine-learning-engineering/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://dinispeixoto.com/categories/brand-recommendations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mob Programming</title>
-      <link>https://dinispeixoto.com/categories/mob-programming/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/categories/mob-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://dinispeixoto.com/categories/git/</link>
-      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web development</title>
-      <link>https://dinispeixoto.com/categories/web-development/</link>
-      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/categories/web-development/</guid>
+      <guid>https://dinispeixoto.com/categories/machine-learning-engineering/</guid>
       <description></description>
     </item>
     

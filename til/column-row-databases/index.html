@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.
+This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected." />
+<meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, data, databases" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/til/column-row-databases/" />
+
+
+    <title>
+        
+            Column vs row-oriented databases :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.ae882888efdfe270720245beed0f50838debe778b75c1df507f4ecf20e9ea7ec.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Column vs row-oriented databases">
+<meta itemprop="description" content="The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.
+This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected.">
+<meta itemprop="datePublished" content="2021-11-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-11-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="412">
+<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+
+
+<meta itemprop="keywords" content="data,databases," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+<meta name="twitter:title" content="Column vs row-oriented databases"/>
+<meta name="twitter:description" content="The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.
+This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected."/>
+
+
+
+    <meta property="og:title" content="Column vs row-oriented databases" />
+<meta property="og:description" content="The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.
+This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/til/column-row-databases/" />
+<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="article:published_time" content="2021-11-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-15T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="Data Engineering" />
+
+
+
+    <meta property="article:published_time" content="2021-11-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/column-row-databases/">Column vs row-oriented databases</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.</p>
+<p>This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected. If we were to use a row-oriented database, since each row is stored together we would always have to go over the entire row even when not required.</p>
+<p>Let’s consider the following example:</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>john</td>
+<td>32</td>
+</tr>
+<tr>
+<td>2</td>
+<td>alexa</td>
+<td>29</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dinis</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<h2 id="row-oriented-database">Row-oriented database</h2>
+<p>In a row-oriented database, data is stored row by row, i.e. the data is represented in the disk by a sequential list of rows, like the following example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>john</td>
+<td>32</td>
+<td>2</td>
+<td>alexa</td>
+<td>29</td>
+<td>3</td>
+<td>dinis</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<p>This is usually how traditional databases like Postgres and MySQL work and it works quite well for OLTP (Online Transactional Processing) applications, as they can provide good performance for writes - since writing new data is just a matter of appending a new row after the last one.</p>
+<p>When it comes to reads, it depends on whether we need to read the entire row or just a few columns - i.e. when dealing with complex operations usually the entire row has to be kept in memory even though only part of its columns are needed.</p>
+<h2 id="column-oriented-database">Column-oriented database</h2>
+<p>Column-oriented databases, on the other hand, were created to support fast reads (and ad-hoc queries) even if that requires compromising writes as we will see. This is why they are usually used by OLAP (Online Analytical Processing) applications. In a column-oriented database, the values for a given column are grouped, like the following example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>john</td>
+<td>alexa</td>
+<td>dinis</td>
+<td>32</td>
+<td>29</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<p>This means that adding a new row forces the database to add a new value after all the values for each of the columns the table has - this can be simplified by having each column stored in a different file/disk.</p>
+<p>When it comes to reads, this database is more appropriate for fast reads as it&rsquo;s a lot easier to go over the values for a specific column without having to go through all the other columns.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/data/">data</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/databases/">databases</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/data-engineering/">Data Engineering</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2022</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
