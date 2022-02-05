@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/series/til/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spark architecture</title>
+      <link>https://dinispeixoto.com/til/spark-architecture/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/spark-architecture/</guid>
+      <description>Apache Spark is a distributed processing platform used for big data workloads. It is usually used for data or machine learning pipelines that require processing large amounts of data.
+Spark&amp;rsquo;s architecture includes several components, which we will describe next.
+Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
+    </item>
     
     <item>
       <title>Column vs row-oriented databases</title>

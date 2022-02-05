@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>distributed processing</title>
+      <link>https://dinispeixoto.com/tags/distributed-processing/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/distributed-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>https://dinispeixoto.com/tags/spark/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/spark/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>data</title>
@@ -81,24 +99,6 @@
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/cosine-similarity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>farfetch</title>
-      <link>https://dinispeixoto.com/tags/farfetch/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/farfetch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine learning</title>
-      <link>https://dinispeixoto.com/tags/machine-learning/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     

@@ -4,7 +4,47 @@
   
   <url>
     <loc>https://dinispeixoto.com/categories/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/tags/distributed-processing/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/series/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/tags/spark/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/til/spark-architecture/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/tags/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dinispeixoto.com/series/til/</loc>
+    <lastmod>2022-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,26 +64,6 @@
   
   <url>
     <loc>https://dinispeixoto.com/tags/databases/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/series/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/tags/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/series/til/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -114,11 +134,6 @@
   
   <url>
     <loc>https://dinispeixoto.com/tags/machine-learning/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url>
   

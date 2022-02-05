@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dinispeixoto.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spark architecture</title>
+      <link>https://dinispeixoto.com/til/spark-architecture/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/spark-architecture/</guid>
+      <description>Apache Spark is a distributed processing platform used for big data workloads. It is usually used for data or machine learning pipelines that require processing large amounts of data.
+Spark&amp;rsquo;s architecture includes several components, which we will describe next.
+Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
+    </item>
     
     <item>
       <title>Column vs row-oriented databases</title>
@@ -98,17 +109,6 @@ Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m
       <guid>https://dinispeixoto.com/til/do-not-track/</guid>
       <description>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</description>
-    </item>
-    
-    <item>
-      <title>Hey there! 👋</title>
-      <link>https://dinispeixoto.com/about/</link>
-      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/about/</guid>
-      <description>I&amp;rsquo;m Dinis Peixoto, a software engineer based in Braga, Portugal. 🇵🇹 I have been working at FARFETCH (an e-commerce luxury platform 👠) for over 3 years now.
-I consider myself an eager to learn person, always with a learn-by-doing philosophy in mind. Other than that, I really like to feel challenged as it enables me to not only learn new things but also improve my problem solving skills.
-I truly believe that teaching is one of the best ways to learn, that&amp;rsquo;s why I&amp;rsquo;m currently mentoring csharp and python at exercism.</description>
     </item>
     
   </channel>

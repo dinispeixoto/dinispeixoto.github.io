@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Spark architecture</title>
+      <link>https://dinispeixoto.com/til/spark-architecture/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/spark-architecture/</guid>
+      <description>Apache Spark is a distributed processing platform used for big data workloads. It is usually used for data or machine learning pipelines that require processing large amounts of data.
+Spark&amp;rsquo;s architecture includes several components, which we will describe next.
+Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
+    </item>
+    
+    <item>
       <title>Column vs row-oriented databases</title>
       <link>https://dinispeixoto.com/til/column-row-databases/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
