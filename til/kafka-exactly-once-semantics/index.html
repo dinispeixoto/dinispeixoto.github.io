@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates." />
+<meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, kafka, streaming, messaging" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" />
+
+
+    <title>
+        
+            Kafka exactly-once semantics :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.ae882888efdfe270720245beed0f50838debe778b75c1df507f4ecf20e9ea7ec.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Kafka exactly-once semantics">
+<meta itemprop="description" content="Before explaining how Kafka can achieve exactly-once semantics, let&rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.">
+<meta itemprop="datePublished" content="2022-02-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-02-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="824">
+<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+
+
+<meta itemprop="keywords" content="kafka,streaming,messaging," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+
+<meta name="twitter:title" content="Kafka exactly-once semantics"/>
+<meta name="twitter:description" content="Before explaining how Kafka can achieve exactly-once semantics, let&rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates."/>
+
+
+
+    <meta property="og:title" content="Kafka exactly-once semantics" />
+<meta property="og:description" content="Before explaining how Kafka can achieve exactly-once semantics, let&rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" />
+<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="article:published_time" content="2022-02-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-19T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="Software Engineering" />
+
+
+
+    <meta property="article:published_time" content="2022-02-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/kafka-exactly-once-semantics/">Kafka exactly-once semantics</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Before explaining how Kafka can achieve exactly-once semantics, let&rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.</p>
+<ul>
+<li>
+<p><strong>At-least-once</strong>: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</p>
+</li>
+<li>
+<p><strong>At-most-once</strong>: if the producer never retries to send the message again. In this scenario, the message might never be received by the broker (thus never written).</p>
+</li>
+<li>
+<p><strong>Exactly-once</strong>: even if the message is sent twice, it is only delivered once (i.e. duplicates are ignored). This heavily depends on the consumer application as well, as it&rsquo;s not only a matter of ensuring that the system doesn&rsquo;t have the same message twice within the Kafka topic but also that consumers won&rsquo;t process the same message twice.</p>
+</li>
+</ul>
+<h2 id="challenges">Challenges</h2>
+<p>Let&rsquo;s consider a simple example of a producer app that writes to a Kafka topic, a consumer app that reads from the same Kafka topic and writes to both another Kafka topic and a database. We also want this to have exactly-once semantics (as described above).</p>
+<ol>
+<li>
+<p>The first challenge we face is on the producer app, as it has to write the message but fails to get ACK. If we retry the message can end up duplicated (at-least-once delivery) if we don&rsquo;t the message may never be written (at-most-once delivery).</p>
+</li>
+<li>
+<p>The second challenge is on the consumer side. The consumer app can read the messages from the broker and write their contents to both the Kafka topic and database, but fail before committing the offset back to Kafka. This means that eventually the consumer would consume again messages and write the data that was already written. If it were to first commit the offset and only then write, then the problem would be processing the message without actually writing the contents on the output topic and database, thus losing data.</p>
+</li>
+</ol>
+<h2 id="producer">Producer</h2>
+<p>The first challenge can be solved by making the producer idempotent, i.e. the ability to apply the same operation multiple times without changing the result beyond the first try. This allows the producer to always retry until it receives the ACK and Kafka will transparently detect and ignore duplicates.</p>
+<p>If a producer retries to send messages those will be idempotent and only persisted in the log exactly once. This is done by assigning each producer a PID during initialization and assigning each message a sequence number per topic partition - if the broker has a given message already, then the message is discarded. Though it’s important to note that this is only guaranteed within a single producer session, meaning that if a new producer is created (or restarted) a new PID will be used.</p>
+<h2 id="consumer">Consumer</h2>
+<p>When it comes to the second challenge, the consumer has to do a few things:</p>
+<ol>
+<li>consume the message</li>
+<li>write the data into a database</li>
+<li>write another message on a Kafka topic</li>
+<li>commit the offset back</li>
+</ol>
+<p>In order to be able to do this, Kafka introduced <em>Transactions</em>.</p>
+<blockquote>
+<p>At the core, transactional guarantees enable applications to produce to multiple TopicPartitions atomically, ie. all writes to these TopicPartitions will succeed or fail as a unit.</p>
+</blockquote>
+<p>This means that we can create a transaction, make a set of operations (e.g. produce to multiple topics), and then commit or rollback the transaction. In order to commit the transaction the <a href="https://www.confluent.io/blog/transactions-apache-kafka/">two phase commit protocol</a> is used. Then consumers can choose to read only committed messages (those who resulted from a committed transaction) - this also means that messages are never deleted from the Kafka log, they will stay there and consumers can read them if they choose to do it as there&rsquo;s an option to read uncommitted messages.</p>
+<p>When it comes to writing data into a database, there are a few possible options developers can use. One of them is storing the consumer offset along with the data written into the database; another option is to use Kafka itself to store the changes (or a Kafka Connector). Keep in mind however that exactly-once semantics only ensures exactly-once processing at the Kafka level, meaning that if your system has side effects you will be back to the same challenge, since if a failure occurs messages will still be processed multiple times internally.</p>
+<p>Last but not least, the consumer has to commit the offset, and this should also be part of the transaction. Funny enough, since Kafka 0.8.2 committing the offset amounts to a write to Kafka, meaning that this is no different from producing a message to a Kafka topic.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-98+-+Exactly+Once+Delivery+and+Transactional+Messaging">KIP-129: Streams Exactly-Once Semantics</a></li>
+<li><a href="https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/">Exactly-Once Semantics Are Possible: Here’s How Kafka Does It</a></li>
+<li><a href="https://medium.com/@jaykreps/exactly-once-support-in-apache-kafka-55e1fdd0a35f">Exactly-once Support in Apache Kafka</a></li>
+<li><a href="https://softwaremill.com/what-kafka-exactly-once-really-means/">What does Kafka&rsquo;s exactly-once processing really mean?</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/kafka/">kafka</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/streaming/">streaming</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/messaging/">messaging</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/software-engineering/">Software Engineering</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2022</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

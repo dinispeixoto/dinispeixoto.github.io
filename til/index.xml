@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Kafka exactly-once semantics</title>
+      <link>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</guid>
+      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
+    </item>
+    
+    <item>
       <title>Spark architecture</title>
       <link>https://dinispeixoto.com/til/spark-architecture/</link>
       <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
