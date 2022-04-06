@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
 <meta name="description" content="During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here)." />
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
+Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here)." />
 <meta name="keywords" content="dinis peixoto, computer science, today I learned, blog, hugo, software engineering, resume, spark, batch, bert, vit, pytorch, machine learning" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -44,10 +45,11 @@
 
 <meta itemprop="name" content="Distributed model inference using Spark">
 <meta itemprop="description" content="During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here).">
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
+Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here).">
 <meta itemprop="datePublished" content="2022-04-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-04-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="428">
+<meta itemprop="wordCount" content="446">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -58,13 +60,15 @@
 
 <meta name="twitter:title" content="Distributed model inference using Spark"/>
 <meta name="twitter:description" content="During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here)."/>
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
+Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here)."/>
 
 
 
     <meta property="og:title" content="Distributed model inference using Spark" />
 <meta property="og:description" content="During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here)." />
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
+Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.com/til/distributed-model-inference-spark/" />
 <meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
@@ -153,6 +157,7 @@
 <li>text embeddings using a fine-tuned <em>BERT</em> model</li>
 <li>image embeddings using a fine-tuned <em>ViT</em> model</li>
 </ul>
+<p>I will use this TIL to share some of the key learnings I could get from this experience.</p>
 <h3 id="pandas-udf-vs-spark-udf">Pandas UDF vs Spark UDF</h3>
 <p>Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained <a href="https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html">here</a>).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@pandas_udf</span>(<span style="color:#f92672">...</span>)

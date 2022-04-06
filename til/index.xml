@@ -19,7 +19,8 @@
       
       <guid>https://dinispeixoto.com/til/distributed-model-inference-spark/</guid>
       <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
+Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
     </item>
     
     <item>
