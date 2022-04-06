@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Distributed model inference using Spark</title>
+      <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/distributed-model-inference-spark/</guid>
+      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
+ text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
+    </item>
+    
+    <item>
       <title>Kafka exactly-once semantics</title>
       <link>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
