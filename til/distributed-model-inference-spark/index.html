@@ -179,7 +179,7 @@ dataloader <span style="color:#f92672">=</span> DataLoader(input_dataset, batch_
   batch<span style="color:#f92672">.</span>to(device)
   model<span style="color:#f92672">.</span>predict(batch)
 </code></pre></div><h3 id="gpu-usage">GPU usage</h3>
-<p>Always validate the GPU usage. Try to keep it above 90% to make sure the time is actually being spent with inference and not with the iterator or something else - this can easily be checked through&rsquo;s Ganglia UI if you are using Databricks.</p>
+<p>Always validate the GPU usage. Try to keep it above 90% to make sure the time is actually being spent with inference and not with the iterator or something else - this can easily be checked through Ganglia&rsquo;s UI if you are using Databricks.</p>
 <h3 id="hdfs---small-files-problem">HDFS - Small files problem</h3>
 <p>When using images from an HDFS, consider loading them first to a table on Databricks - reading each image from the filesystem is really expensive when each image is a separate file. I opted for loading them to a delta table to have metadata along with less partitioned files, which also considerably improved the loading performance.</p>
 <h3 id="always-validate-the-number-of-partitions">Always validate the number of partitions</h3>
