@@ -49,7 +49,7 @@ Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performanc
 Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&rsquo;s explained here).">
 <meta itemprop="datePublished" content="2022-04-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-04-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="446">
+<meta itemprop="wordCount" content="445">
 <meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 
 
@@ -164,7 +164,7 @@ Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performanc
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">predict</span>(batch: pd<span style="color:#f92672">.</span>Series) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>Series:
   <span style="color:#f92672">...</span>
 </code></pre></div><h3 id="broadcasting-the-model">Broadcasting the model</h3>
-<p>Broadcasting the model to the workers should help as a read-only copy is kept on each spark worker (it&rsquo;s also possible to broadcast the <code>state_dict</code> only - example for PyTorch - and load the model every time your Pandas UDF is called, just to make sure you are using a large batch otherwise you will spend more time loading the model than actually running inference).</p>
+<p>Broadcasting the model to the workers should help as a read-only copy is kept on each spark worker (it&rsquo;s also possible to broadcast the <code>state_dict</code> only - example for PyTorch - and load the model every time your Pandas UDF is called, just make sure you are using a large batch otherwise you will spend more time loading the model than actually running inference).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">broadcasted_model <span style="color:#f92672">=</span> spark<span style="color:#f92672">.</span>sparkContext<span style="color:#f92672">.</span>broadcast(model)
 </code></pre></div><h3 id="gpu-vs-cpu">GPU vs CPU</h3>
 <p>Inference using a single GPU was much faster than using a CPU-based cluster (even with 8 cores/worker, which is basically having 8 threads/worker running in parallel).</p>
