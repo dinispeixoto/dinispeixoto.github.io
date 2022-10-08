@@ -1,300 +1,182 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://dinispeixoto.com/tags/batch/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/bert/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/categories/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/distributed-model-inference-spark/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/machine-learning/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/pytorch/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/series/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/spark/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/series/til/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/vit/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/kafka/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/messaging/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/categories/software-engineering/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/streaming/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/distributed-processing/</loc>
     <lastmod>2022-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/spark-architecture/</loc>
     <lastmod>2022-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/column-row-databases/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/data/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/categories/data-engineering/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/databases/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/slots/</loc>
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/oop/</loc>
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/python/</loc>
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/new-vs-init/</loc>
     <lastmod>2021-05-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/classmethod/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/staticmethod/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/series/brand-recommendations/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/brand-recommendations/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/brand-recommendations/</loc>
+    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/cosine-similarity/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/farfetch/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/mle/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/posts/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/tfidf/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/force-python-to-release-memory/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/memory/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/process/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dinispeixoto.com/series/mob-programming/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/remote-mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/software-development-methodologies/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/teamwork/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/git/</loc>
     <lastmod>2020-10-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/git-add-patch/</loc>
     <lastmod>2020-10-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/dnt/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/do-not-track/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/do-not-track/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/firefox/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/google-analytics/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/hugo/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/til/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/til/</loc>
     <lastmod>2020-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://dinispeixoto.com/about/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
   </url>
-  
 </urlset>

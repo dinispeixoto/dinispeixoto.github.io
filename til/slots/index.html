@@ -26,8 +26,7 @@ class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 1
 
 
 
-<link rel="stylesheet" href="https://dinispeixoto.com/main.ae882888efdfe270720245beed0f50838debe778b75c1df507f4ecf20e9ea7ec.css">
-
+<link rel="stylesheet" href="https://dinispeixoto.com/main.e9f3c77ca5f97730e5f7fc10210c9724dbfa7cca91fe3990200b0eb7843e62ce.css">
 
 
 
@@ -35,23 +34,16 @@ class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 1
     <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
     <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
-    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
-    <meta name="msapplication-TileColor" content="#252627">
-    <meta name="theme-color" content="#252627">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="Benefits of using `__slots__`">
 <meta itemprop="description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.">
-<meta itemprop="datePublished" content="2021-10-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-10-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="152">
-<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
-
-
-
+class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class."><meta itemprop="datePublished" content="2021-10-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="152"><meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 <meta itemprop="keywords" content="python,oop," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
@@ -66,10 +58,10 @@ class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The sp
 <meta property="og:description" content="Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
 class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dinispeixoto.com/til/slots/" />
-<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="og:url" content="https://dinispeixoto.com/til/slots/" /><meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/><meta property="article:section" content="TIL" />
 <meta property="article:published_time" content="2021-10-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-10-09T00:00:00+00:00" />
+<meta property="og:see_also" content="https://dinispeixoto.com/til/distributed-model-inference-spark/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/spark-architecture/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/column-row-databases/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/new-vs-init/" />
 
 
 
@@ -149,21 +141,21 @@ class Example: ... foo = Example() foo.name = &#34;name&#34; foo.age = 10 The sp
 
             <div class="post-content">
                 <p>Class instances in Python can hold instance variables. Due to Python&rsquo;s dynamic nature, these variables live within a dictionary (<code>__dict__</code>) for a given class instance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
-    <span style="color:#f92672">...</span>
-
-foo <span style="color:#f92672">=</span> Example()
-foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
-foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><p>The special attribute <code>__slots_</code> works as an alternative to <code>__dict__</code> as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
-    __slots__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>
-    <span style="color:#f92672">...</span>
-
-foo <span style="color:#f92672">=</span> Example()
-foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
-foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>        <span style="color:#75715e"># AttributeError</span>
-</code></pre></div><p>The benefits of doing this is that, since you no longer need a dictionary to hold you instance variables, you will end up with <strong>faster attribute access</strong> and <strong>space savings in memory</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> Example()
+</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
+</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><p>The special attribute <code>__slots_</code> works as an alternative to <code>__dict__</code> as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Example</span>:
+</span></span><span style="display:flex;"><span>    __slots__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>foo <span style="color:#f92672">=</span> Example()
+</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
+</span></span><span style="display:flex;"><span>foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>        <span style="color:#75715e"># AttributeError</span>
+</span></span></code></pre></div><p>The benefits of doing this is that, since you no longer need a dictionary to hold you instance variables, you will end up with <strong>faster attribute access</strong> and <strong>space savings in memory</strong>.</p>
 
             </div>
         </article>
@@ -217,22 +209,7 @@ foo<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> 
 
 
 
-<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
-    
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-170600213-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
 
 
 

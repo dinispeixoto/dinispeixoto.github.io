@@ -26,8 +26,7 @@ I started by making sure that the internal template was actually being properly 
 
 
 
-<link rel="stylesheet" href="https://dinispeixoto.com/main.ae882888efdfe270720245beed0f50838debe778b75c1df507f4ecf20e9ea7ec.css">
-
+<link rel="stylesheet" href="https://dinispeixoto.com/main.e9f3c77ca5f97730e5f7fc10210c9724dbfa7cca91fe3990200b0eb7843e62ce.css">
 
 
 
@@ -35,23 +34,16 @@ I started by making sure that the internal template was actually being properly 
     <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
     <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
-    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="#252627">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="">
     <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
-    <meta name="msapplication-TileColor" content="#252627">
-    <meta name="theme-color" content="#252627">
-
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="Do Not Track - HTTP header">
 <meta itemprop="description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
-I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.">
-<meta itemprop="datePublished" content="2020-06-25T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="267">
-<meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
-
-
-
+I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok."><meta itemprop="datePublished" content="2020-06-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="267"><meta itemprop="image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
 <meta itemprop="keywords" content="google analytics,hugo,til,do not track,dnt,firefox," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
@@ -66,10 +58,10 @@ I started by making sure that the internal template was actually being properly 
 <meta property="og:description" content="While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
 I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dinispeixoto.com/til/do-not-track/" />
-<meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/>
+<meta property="og:url" content="https://dinispeixoto.com/til/do-not-track/" /><meta property="og:image" content="https://dinispeixoto.com/img/image_original_3.jpg"/><meta property="article:section" content="TIL" />
 <meta property="article:published_time" content="2020-06-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-25T00:00:00+00:00" />
+<meta property="og:see_also" content="https://dinispeixoto.com/til/distributed-model-inference-spark/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/spark-architecture/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/column-row-databases/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/slots/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/new-vs-init/" />
 
 
 
@@ -152,14 +144,14 @@ I started by making sure that the internal template was actually being properly 
 <p>I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</p>
 <p>Only then it came to my mind that I was using Firefox with the <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?as=u&amp;utm_source=inproduct">protection level</a> set to <em>strict</em> and the <a href="https://support.mozilla.org/en-US/kb/how-do-i-turn-do-not-track-feature">DNT</a> header <em>enabled</em>. At first, I thought that the latter was the reason why my requests were not being tracked by Google Analytics.</p>
 <p>However, I noticed that the Google Analytics script from Hugo&rsquo;s internal template was not looking at the DNT header. It was using a default value set to <code>false</code> instead, meaning that it was Firefox&rsquo;s protection level that was avoiding Google Analytics from tracking myself.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
-<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>){...}
-</code></pre></div><p>I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that lets users opt-out from websites&rsquo; tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">it&rsquo;s not widely accepted</a> though.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>){...}
+</span></span></code></pre></div><p>I knew nothing about the <em>DNT</em> or <em>Do Not Track</em> header. After a quick search, I realized that it&rsquo;s an HTTP header that lets users opt-out from websites&rsquo; tracking. It&rsquo;s up to the website to comply with the DNT header and <a href="https://www.fastcompany.com/90308068/how-the-tragic-death-of-do-not-track-ruined-the-web-for-everyone">it&rsquo;s not widely accepted</a> though.</p>
 <p>Either way, I wanted this website to comply with the <em>DNT header</em>, so I&rsquo;ve updated the internal template configuration to actually take advantage of this header and avoid tracking users if they rather not be tracked.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msDoNotTrack</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;yes&#34;</span>);
-<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>) {...}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> window.<span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">msDoNotTrack</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doNotTrack</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">dnt</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;yes&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doNotTrack</span>) {...}
+</span></span></code></pre></div>
             </div>
         </article>
 
@@ -216,22 +208,7 @@ I started by making sure that the internal template was actually being properly 
 
 
 
-<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
-    
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-170600213-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
 
 
 
