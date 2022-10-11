@@ -95,30 +95,6 @@
     <loc>https://dinispeixoto.com/tags/staticmethod/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dinispeixoto.com/tags/brand-recommendations/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/series/brand-recommendations/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/cosine-similarity/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/farfetch/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/mle/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/posts/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/tfidf/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dinispeixoto.com/til/force-python-to-release-memory/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -131,10 +107,16 @@
     <loc>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://dinispeixoto.com/tags/farfetch/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/mob-programming/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/series/mob-programming/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/posts/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/remote-mob-programming/</loc>
