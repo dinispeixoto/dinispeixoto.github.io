@@ -30,5 +30,15 @@ Spark&amp;rsquo;s architecture includes several components, which we will descri
 Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
     </item>
     
+    <item>
+      <title>Brand Recommendations - TF-IDF</title>
+      <link>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</guid>
+      <description>When I started learning about Machine Learning, it all started with a couple online courses. The thing with these courses is that you get to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.
+This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
+    </item>
+    
   </channel>
 </rss>

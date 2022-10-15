@@ -160,5 +160,23 @@
   </url><url>
     <loc>https://dinispeixoto.com/about/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/brand-recommendations/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/brand-recommendations/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/cosine-similarity/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/mle/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/tfidf/</loc>
+    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>

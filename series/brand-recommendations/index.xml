@@ -7,15 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/series/brand-recommendations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/series/brand-recommendations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brand Recommendations - TF-IDF</title>
       <link>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</guid>
-      <description>I have been trying to learn Machine Learning for quite some time now. The main motivation for this was the fact that, at FARFETCH, I work really close to a data science team and wanted to get a grasp of the main challenges that they have to face on a daily basis.
-It all started with a couple online courses. The thing with these courses is that you get to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.</description>
+      <description>When I started learning about Machine Learning, it all started with a couple online courses. The thing with these courses is that you get to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.
+This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
     </item>
     
   </channel>
