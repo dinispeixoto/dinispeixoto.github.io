@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>calibrated probabilities</title>
+      <link>https://dinispeixoto.com/tags/calibrated-probabilities/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/calibrated-probabilities/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://dinispeixoto.com/tags/machine-learning/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability calibration</title>
+      <link>https://dinispeixoto.com/tags/probability-calibration/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/probability-calibration/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>batch</title>
       <link>https://dinispeixoto.com/tags/batch/</link>
@@ -23,15 +50,6 @@
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/bert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine learning</title>
-      <link>https://dinispeixoto.com/tags/machine-learning/</link>
-      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -77,24 +95,6 @@
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/messaging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>streaming</title>
-      <link>https://dinispeixoto.com/tags/streaming/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/streaming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>distributed processing</title>
-      <link>https://dinispeixoto.com/tags/distributed-processing/</link>
-      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/distributed-processing/</guid>
       <description></description>
     </item>
     

@@ -2,40 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dinispeixoto.com/tags/calibrated-probabilities/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/categories/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/machine-learning/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/probability-calibration/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/til/calibrated-probabilities/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/til/</loc>
+    <lastmod>2022-11-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dinispeixoto.com/tags/batch/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/bert/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dinispeixoto.com/categories/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dinispeixoto.com/til/distributed-model-inference-spark/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/machine-learning/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/pytorch/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dinispeixoto.com/series/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dinispeixoto.com/tags/spark/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/series/til/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/vit/</loc>

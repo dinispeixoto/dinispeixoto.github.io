@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog." />
+<meta name="keywords" content="dinis peixoto, machine learning, machine learning engineering, mlops, computer science, today I learned, blog, hugo, software engineering, resume, probability calibration, calibrated probabilities, machine learning" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/til/calibrated-probabilities/" />
+
+
+    <title>
+        
+            Probability Calibration :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.d2b9fd41d7e7e3c5253cd69761a2dfc0c0ffbff5d78e06960781a5ca3e8bf4ea.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Probability Calibration">
+<meta itemprop="description" content="Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog."><meta itemprop="datePublished" content="2022-11-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-11-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="479"><meta itemprop="image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
+<meta itemprop="keywords" content="probability calibration,calibrated probabilities,machine learning," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
+
+<meta name="twitter:title" content="Probability Calibration"/>
+<meta name="twitter:description" content="Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog."/>
+
+
+
+    <meta property="og:title" content="Probability Calibration" />
+<meta property="og:description" content="Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/til/calibrated-probabilities/" /><meta property="og:image" content="https://dinispeixoto.com/img/dinis1.jpg"/><meta property="article:section" content="TIL" />
+<meta property="article:published_time" content="2022-11-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-05T00:00:00+00:00" />
+<meta property="og:see_also" content="https://dinispeixoto.com/til/distributed-model-inference-spark/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/spark-architecture/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/column-row-databases/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/slots/" />
+
+
+
+
+
+    <meta property="article:section" content="Machine Learning Engineering" />
+
+
+
+    <meta property="article:published_time" content="2022-11-05 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/calibrated-probabilities/">Probability Calibration</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the <em>References</em> section below.</p>
+<p>Let&rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</p>
+<p>After training the model, regardless of its performance, we decide to test whether the value returned corresponds to the probability we are looking for. Our gut feeling certainly tells us that after having the model trained, if it returns a score of 0.5, it certainly means there&rsquo;s a 50% chance of having a dog in the photo.</p>
+<p>However, this is only true if, for a subset of photos with a predicted score of 0.5, 50% of them have dogs - when this happens we can say that the model returns calibrated probabilities, i.e. the predicted score represents the true likelihood of an event happening - in this case, the photo having a dog.</p>
+<blockquote>
+<p>Probability calibration is the process of calibrating an ML model to return the true likelihood of an event. This is necessary when we need the probability of the event in question rather than its classification.</p>
+</blockquote>
+<p><img src="https://dinispeixoto.com/img/til/calibrated-prob/calibrated-model.png" alt="Calibrated Model"></p>
+<p>The plot above tries to represent this: on a calibrated model if there’s a predicted probability of 0.2, then the fraction of photos with dogs (positives) with this score will also be 0.2. The <strong>x-axis</strong> represents the average predicted probability, and the <strong>y-axis</strong> is the fraction of positives (photos with dogs).</p>
+<p>Due to the nature of models, this is not what actually happens in practice most of the time. The next plot (from <a href="https://scikit-learn.org/stable/modules/calibration.html">sklearn&rsquo;s documentation</a>), shows how the calibration of different model types (Logistic, Naive Bayes, SVC and Random Forest) would look in practice:</p>
+<p><img src="https://dinispeixoto.com/img/til/calibrated-prob/models-calibration.png" alt="Classification models - calibration"></p>
+<p>If we look closely at the calibration curve of the SVC and Naive Bayes models for a mean predicted probability of 0.2, we can easily see that the fraction of positives is actually quite far from 0.2 - it&rsquo;s below 0.1 for SVC and above 0.4 for Naive Bayes. This means that when SVC returns a predicted probability of 0.2, less than 10% of photos would have dogs, and when Naive Bayes returns the same probability, more than 40% of photos would have dogs.</p>
+<p>In order to have calibrated probabilities, our goal would be to have the calibration curve as close to the dashed line (<em>Perfectly Calibrated</em>) and only then we would be able to say that we are sure that a predicted probability of 0.2 means that there&rsquo;s a 20% chance of a specific photo having a dog.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/calibration.html">scikit-learn - Probability calibration</a></li>
+<li><a href="https://medium.com/analytics-vidhya/how-probability-calibration-works-a4ba3f73fd4d">How Probability Calibration Works</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/probability-calibration/">probability calibration</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/calibrated-probabilities/">calibrated probabilities</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/machine-learning/">machine learning</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/machine-learning-engineering/">Machine Learning Engineering</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2022</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
+
+
+
+    </body>
+</html>

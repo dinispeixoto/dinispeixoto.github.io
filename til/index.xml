@@ -9,6 +9,16 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Probability Calibration</title>
+      <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/calibrated-probabilities/</guid>
+      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
+    </item>
+    
+    <item>
       <title>Distributed model inference using Spark</title>
       <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
@@ -97,16 +107,6 @@ Let&amp;rsquo;s consider the example below of an Example python class, with a me
       <guid>https://dinispeixoto.com/til/git-add-patch/</guid>
       <description>It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
 Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged, git add . will do the job.</description>
-    </item>
-    
-    <item>
-      <title>Do Not Track - HTTP header</title>
-      <link>https://dinispeixoto.com/til/do-not-track/</link>
-      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/til/do-not-track/</guid>
-      <description>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
-I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</description>
     </item>
     
   </channel>

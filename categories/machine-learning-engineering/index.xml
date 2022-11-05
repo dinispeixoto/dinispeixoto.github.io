@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/categories/machine-learning-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/categories/machine-learning-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Probability Calibration</title>
+      <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/calibrated-probabilities/</guid>
+      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
+Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
+    </item>
+    
     <item>
       <title>Distributed model inference using Spark</title>
       <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
