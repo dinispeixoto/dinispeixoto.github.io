@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leveraging Redis for online feature lookup</title>
+      <link>https://dinispeixoto.com/til/redis-performance/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/redis-performance/</guid>
+      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way).</description>
+    </item>
+    
     <item>
       <title>Probability Calibration</title>
       <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
@@ -97,15 +108,6 @@ Let&amp;rsquo;s consider the example below of an Example python class, with a me
       
       <guid>https://dinispeixoto.com/til/force-python-to-release-memory/</guid>
       <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
-    </item>
-    
-    <item>
-      <title>A year&#39;s worth of learnings from adopting Mob programming</title>
-      <link>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</guid>
-      <description>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</description>
     </item>
     
   </channel>

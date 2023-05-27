@@ -7,22 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>machine learning</title>
+      <link>https://dinispeixoto.com/tags/machine-learning/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>online feature store</title>
+      <link>https://dinispeixoto.com/tags/online-feature-store/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/online-feature-store/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://dinispeixoto.com/tags/redis/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software engineering</title>
+      <link>https://dinispeixoto.com/tags/software-engineering/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>calibrated probabilities</title>
       <link>https://dinispeixoto.com/tags/calibrated-probabilities/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/calibrated-probabilities/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine learning</title>
-      <link>https://dinispeixoto.com/tags/machine-learning/</link>
-      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -68,33 +95,6 @@
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://dinispeixoto.com/tags/spark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vit</title>
-      <link>https://dinispeixoto.com/tags/vit/</link>
-      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/vit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kafka</title>
-      <link>https://dinispeixoto.com/tags/kafka/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>messaging</title>
-      <link>https://dinispeixoto.com/tags/messaging/</link>
-      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://dinispeixoto.com/tags/messaging/</guid>
       <description></description>
     </item>
     

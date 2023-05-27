@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>online feature store on Dinis Peixoto</title>
+    <link>https://dinispeixoto.com/tags/online-feature-store/</link>
+    <description>Recent content in online feature store on Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/online-feature-store/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leveraging Redis for online feature lookup</title>
+      <link>https://dinispeixoto.com/til/redis-performance/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dinispeixoto.com/til/redis-performance/</guid>
+      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way).</description>
+    </item>
+    
+  </channel>
+</rss>

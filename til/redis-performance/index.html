@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Dinis Peixoto]">
+<meta name="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)." />
+<meta name="keywords" content="dinis peixoto, machine learning, machine learning engineering, mlops, computer science, today I learned, blog, hugo, software engineering, resume, redis, online feature store, software engineering, machine learning" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://dinispeixoto.com/til/redis-performance/" />
+
+
+    <title>
+        
+            Leveraging Redis for online feature lookup :: Dinis Peixoto 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://dinispeixoto.com/main.d2b9fd41d7e7e3c5253cd69761a2dfc0c0ffbff5d78e06960781a5ca3e8bf4ea.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://dinispeixoto.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://dinispeixoto.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://dinispeixoto.com/favicon-16x16.png">
+    <link rel="manifest" href="https://dinispeixoto.com/site.webmanifest">
+    <link rel="mask-icon" href="https://dinispeixoto.com/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://dinispeixoto.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Leveraging Redis for online feature lookup">
+<meta itemprop="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)."><meta itemprop="datePublished" content="2023-05-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-05-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="826"><meta itemprop="image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
+<meta itemprop="keywords" content="redis,online feature store,software engineering,machine learning," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
+
+<meta name="twitter:title" content="Leveraging Redis for online feature lookup"/>
+<meta name="twitter:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)."/>
+
+
+
+    <meta property="og:title" content="Leveraging Redis for online feature lookup" />
+<meta property="og:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
+In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
+I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dinispeixoto.com/til/redis-performance/" /><meta property="og:image" content="https://dinispeixoto.com/img/dinis1.jpg"/><meta property="article:section" content="TIL" />
+<meta property="article:published_time" content="2023-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-27T00:00:00+00:00" />
+<meta property="og:see_also" content="https://dinispeixoto.com/til/calibrated-probabilities/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/distributed-model-inference-spark/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/kafka-exactly-once-semantics/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/spark-architecture/" /><meta property="og:see_also" content="https://dinispeixoto.com/til/column-row-databases/" />
+
+
+
+
+
+    <meta property="article:section" content="Machine Learning Engineering" />
+
+
+
+    <meta property="article:published_time" content="2023-05-27 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-170600213-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://dinispeixoto.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text"> cd $HOME</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://dinispeixoto.com/about/">about me</a></li><li><a href="https://dinispeixoto.com/posts/">posts</a></li><li><a href="https://dinispeixoto.com/til/">today I learned</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://dinispeixoto.com/til/redis-performance/">Leveraging Redis for online feature lookup</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.</p>
+<p>In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.</p>
+<p>I will use this TIL to share some of the findings from going through the code in the <a href="https://github.com/redis/redis-py">Redis client</a> I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way).</p>
+<p>Throughout this post, I will discuss the factors that contribute to suboptimal lookup performance, such as network latency, and the overall design of the Redis client.</p>
+<h2 id="everything-was-going-to-the-moon--">Everything was going to the moon 🚀 🌕</h2>
+<p>Upon deploying the application to production, I soon realized that pretty much everything was going to the moon not only from the app&rsquo;s perspective but also within the Redis cluster utilized - this included everything from the response time, to the cluster CPU usage and number of connections.</p>
+<p>The magnitude of the connection surge was particularly astonishing. While I had anticipated a significant increase in connections upon the app&rsquo;s startup, what unfolded exceeded my expectations. Instead of stabilizing, the number of connections continued to escalate relentlessly, reaching two to three times its original count within a couple of hours.</p>
+<h2 id="what-is-the-redis-client-doing-under-the-hood">What is the Redis client doing under the hood?</h2>
+<p>The first thing that was worth understanding was basically why the hell was the client doing under the hood that allowed the app to create so many TCP connections. Equally important was understanding why these connections were persisting even when they were no longer required. After digging into the code it was clear why this was happening.</p>
+<ol>
+<li>
+<p>First things first, for each Redis command, what happens is that <a href="https://github.com/redis/redis-py/blob/master/redis/asyncio/cluster.py#L977">the client tries to acquire a connection from the connection pool</a>. If there&rsquo;s a connection available, all good; otherwise it just creates a new connection.</p>
+</li>
+<li>
+<p>Second, there was no default max connections allowed per client, or maybe better, <a href="https://github.com/redis/redis-py/blob/master/redis/asyncio/cluster.py#L233">there was one but a really large value (2^31)</a>. This means that each client could, in theory, create as many TCP connections as they want, at least <a href="https://redis.io/docs/reference/clients/#maximum-concurrent-connected-clients">until the server starts complaining</a>. If, for some reason, the client would reach the max connections allowed, a <code>MaxConnectionsError</code> would have been raised.</p>
+</li>
+</ol>
+<p>With that said, there were 2 issues that had to be solved here:</p>
+<ol>
+<li>too many connections are being acquired for each request.</li>
+<li>a lower max connections value should be set.</li>
+</ol>
+<h2 id="too-many-connections-being-acquired-for-each-request">Too many connections being acquired for each request</h2>
+<p>During online inference, it is common for machine learning models to retrieve multiple features from an online feature store. This scenario applied to our situation as well. The thing is that if we performed individual operations for each of the 10 required features, we would need to request 10 separate connections from the pool for every single inference request.</p>
+<p>Instead what we should be doing is pipelining all the requests and acquire a single connection from the pool to run them all.</p>
+<p><img src="https://dinispeixoto.com/img/til/redis/pipelining.png" alt="Pipelining"></p>
+<p>By leveraging <a href="https://redis.io/docs/manual/pipelining/">Redis pipelining</a> we are improving the performance by ensuring that multiple commands are sent to the cluster without waiting them individually (and sequentially), while at the same time ensuring that we are not jeopardizing the number of connections created as otherwise it would grow exponentially, impacting the app&rsquo;s response time and the Redis cluster usage (e.g. CPU and memory) too.</p>
+<h2 id="limit-the-max-connections-per-pool">Limit the max connections per pool</h2>
+<p>The next step would be to set the max connections per node in the pool to a lower value. However this one also ended up being quite tricky, as when the max connections in the pool is reached, the client doesn&rsquo;t (asynchronously) wait for a connection in the pool to be free and ready for use, instead it raises a <code>MaxConnectionsError</code> leaving it up to the app to handle the error and determine the appropriate course of action.</p>
+<p>Interestingly, the client does have connection error handling implemented. However, rather than simply retrying the operation, it takes a different approach. It closes all existing connections and recreates them from scratch. While this strategy might be beneficial in certain scenarios (as illustrated in this <a href="https://github.com/redis/redis-py/blob/master/redis/asyncio/cluster.py#L1463">example</a>), it proves to be less advantageous in our case, particularly considering the significant cost involved in establishing TCP connections for multiple nodes within the cluster.</p>
+<p>Instead the solution was to leverage something like <a href="https://github.com/kaelzhang/python-aioretry/tree/master">aioretry</a>. This approach ensures that even in the unlikely scenario of having a client with a connection pool already filled to capacity (i.e., all active connections reaching max_connections) and all of them being currently in use, the operation gracefully waits in an asynchronous manner until a connection from the pool becomes available for use.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://github.com/redis/redis-py">Redis - Client</a></li>
+<li><a href="https://redis.io/docs/manual/pipelining/">Redis - Pipelining</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/tags/redis/">redis</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/online-feature-store/">online feature store</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/software-engineering/">software engineering</a></span>
+        <span class="tag"><a href="https://dinispeixoto.com/tags/machine-learning/">machine learning</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://dinispeixoto.com/categories/machine-learning-engineering/">Machine Learning Engineering</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span></span>
+            <span>&copy; 2023</span>
+            
+                <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
+            
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> & <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG</a></span>
+            <span></span>
+        </div>
+    </div>
+</footer>
+
+
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://dinispeixoto.com/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
+
+
+
+    </body>
+</html>
