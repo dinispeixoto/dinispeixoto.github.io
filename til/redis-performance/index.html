@@ -5,9 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Dinis Peixoto]">
-<meta name="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
-In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
-I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)." />
+<meta name="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
+In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time." />
 <meta name="keywords" content="dinis peixoto, machine learning, machine learning engineering, mlops, computer science, today I learned, blog, hugo, software engineering, resume, redis, online feature store, software engineering, machine learning" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -41,26 +40,23 @@ I will use this TIL to share some of the findings from going through the code in
 
 
 <meta itemprop="name" content="Leveraging Redis for online feature lookup">
-<meta itemprop="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
-In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
-I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)."><meta itemprop="datePublished" content="2023-05-27T00:00:00+00:00" />
+<meta itemprop="description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
+In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time."><meta itemprop="datePublished" content="2023-05-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-05-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="826"><meta itemprop="image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
+<meta itemprop="wordCount" content="841"><meta itemprop="image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
 <meta itemprop="keywords" content="redis,online feature store,software engineering,machine learning," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dinispeixoto.com/img/dinis1.jpg"/>
 
 <meta name="twitter:title" content="Leveraging Redis for online feature lookup"/>
-<meta name="twitter:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
-In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
-I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)."/>
+<meta name="twitter:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
+In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time."/>
 
 
 
     <meta property="og:title" content="Leveraging Redis for online feature lookup" />
-<meta property="og:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.
-In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.
-I will use this TIL to share some of the findings from going through the code in the Redis client I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way)." />
+<meta property="og:description" content="Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
+In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dinispeixoto.com/til/redis-performance/" /><meta property="og:image" content="https://dinispeixoto.com/img/dinis1.jpg"/><meta property="article:section" content="TIL" />
 <meta property="article:published_time" content="2023-05-27T00:00:00+00:00" />
@@ -160,13 +156,12 @@ if (!doNotTrack) {
             
 
             <div class="post-content">
-                <p>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling efficient retrieval of features required for online inference.</p>
-<p>In recent weeks, I encountered a significant challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal.</p>
+                <p>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.</p>
+<p>In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time.</p>
 <p>I will use this TIL to share some of the findings from going through the code in the <a href="https://github.com/redis/redis-py">Redis client</a> I was using, particularly the asynchrounous cluster implementation of the client (this is worth mentioning as it seems that there were a few merges of different clients into a single official one along the way).</p>
-<p>Throughout this post, I will discuss the factors that contribute to suboptimal lookup performance, such as network latency, and the overall design of the Redis client.</p>
 <h2 id="everything-was-going-to-the-moon--">Everything was going to the moon 🚀 🌕</h2>
-<p>Upon deploying the application to production, I soon realized that pretty much everything was going to the moon not only from the app&rsquo;s perspective but also within the Redis cluster utilized - this included everything from the response time, to the cluster CPU usage and number of connections.</p>
-<p>The magnitude of the connection surge was particularly astonishing. While I had anticipated a significant increase in connections upon the app&rsquo;s startup, what unfolded exceeded my expectations. Instead of stabilizing, the number of connections continued to escalate relentlessly, reaching two to three times its original count within a couple of hours.</p>
+<p>After deploying the application to production, I soon realized that pretty much everything was going to the moon, not only from the app&rsquo;s perspective but also within the Redis cluster - this included everything from the response time, to the cluster CPU usage and, most importantly, the number of connections.</p>
+<p>While I was expecting a significant increase in connections after the app&rsquo;s startup, what happened was that the number of connections continued to grow exponentially, even after the app had stabilized. This was particularly concerning, as the number of connections was not only impacting the app&rsquo;s response time but also the Redis cluster itself (which was used by multiple clients). Within a couple of hours the count of connections was two to three times higher than the original count.</p>
 <h2 id="what-is-the-redis-client-doing-under-the-hood">What is the Redis client doing under the hood?</h2>
 <p>The first thing that was worth understanding was basically why the hell was the client doing under the hood that allowed the app to create so many TCP connections. Equally important was understanding why these connections were persisting even when they were no longer required. After digging into the code it was clear why this was happening.</p>
 <ol>
@@ -232,7 +227,7 @@ if (!doNotTrack) {
     <div class="footer__inner">
         <div class="footer__content">
             <span></span>
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             
                 <span><a href="https://dinispeixoto.com">Dinis Peixoto</a></span>
             
