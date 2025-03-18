@@ -15,7 +15,7 @@
       
       <guid>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</guid>
       <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
-At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
+  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ At-least-once: the most commonly used, if the producer receives an ACK from the 
       
       <guid>https://dinispeixoto.com/til/slots/</guid>
       <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
+class Example:  ...  foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 1
       
       <guid>https://dinispeixoto.com/til/new-vs-init/</guid>
       <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
+class Example:  def __init__(self, foo, bar):  self.foo = foo  self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
     </item>
     
     <item>
