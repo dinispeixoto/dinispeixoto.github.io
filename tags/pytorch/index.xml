@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pytorch on Dinis Peixoto</title>
+    <title>Pytorch on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/pytorch/</link>
-    <description>Recent content in pytorch on Dinis Peixoto</description>
+    <description>Recent content in Pytorch on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distributed model inference using Spark</title>
       <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/distributed-model-inference-spark/</guid>
-      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
-Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
+      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:&#xA;text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model I will use this TIL to share some of the key learnings I could get from this experience.&#xA;Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
     </item>
-    
   </channel>
 </rss>

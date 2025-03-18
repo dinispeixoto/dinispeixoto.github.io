@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag1 on Dinis Peixoto</title>
+    <link>http://localhost:1313/tags/tag1/</link>
+    <description>Recent content in Tag1 on Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brand Recommendations - MLOps</title>
+      <link>http://localhost:1313/posts/brand-recommendations-mlops/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/brand-recommendations-mlops/</guid>
+      <description>MLOps </description>
+    </item>
+    <item>
+      <title>Knowledge Graphs</title>
+      <link>http://localhost:1313/posts/knowledge-graphs/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/knowledge-graphs/</guid>
+      <description>Hello world post RDF vs LPG My experience with Neo4j </description>
+    </item>
+    <item>
+      <title>Machine Learning Pipeline</title>
+      <link>http://localhost:1313/posts/machine-learning-pipeline/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/machine-learning-pipeline/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python setup</title>
+      <link>http://localhost:1313/posts/python-setup/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/python-setup/</guid>
+      <description>Hello world post pyenv pipenv pytest flake8 black mypy isort </description>
+    </item>
+  </channel>
+</rss>

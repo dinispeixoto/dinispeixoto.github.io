@@ -5,86 +5,65 @@
     <link>https://dinispeixoto.com/categories/software-engineering/</link>
     <description>Recent content in Software Engineering on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kafka exactly-once semantics</title>
       <link>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</guid>
-      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
-  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
+      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.&#xA;At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
     </item>
-    
     <item>
       <title>Benefits of using `__slots__`</title>
       <link>https://dinispeixoto.com/til/slots/</link>
       <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/slots/</guid>
-      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example:  ...  foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
+      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.&#xA;class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
     </item>
-    
     <item>
       <title>`__new__` vs `__init__`</title>
       <link>https://dinispeixoto.com/til/new-vs-init/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/new-vs-init/</guid>
-      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example:  def __init__(self, foo, bar):  self.foo = foo  self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
+      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.&#xA;class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
     </item>
-    
     <item>
       <title>@staticmethod vs @classmethod</title>
       <link>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</guid>
-      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
+      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.&#xA;Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
     </item>
-    
     <item>
       <title>Force Python to release memory</title>
       <link>https://dinispeixoto.com/til/force-python-to-release-memory/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/force-python-to-release-memory/</guid>
       <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
     </item>
-    
     <item>
       <title>A year&#39;s worth of learnings from adopting Mob programming</title>
       <link>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/posts/a-years-worth-of-learnings-from-adopting-mob-programming/</guid>
       <description>At FARFETCH, teams are encouraged to try new development methodologies so that they can deliver even better results while also improving productivity. As a fairly new team, we have continuously been looking for different methodologies that best fit our needs, such as avoiding knowledge silos or a slow-paced reviewing process. Although not every approach that we have tried has worked, the ones that did are now part of our daily development workflow and play a key role in the outcome of the tasks that we deliver.</description>
     </item>
-    
     <item>
       <title>Git Add Patch</title>
       <link>https://dinispeixoto.com/til/git-add-patch/</link>
       <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/git-add-patch/</guid>
-      <description>It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.
-Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged, git add . will do the job.</description>
+      <description>It&amp;rsquo;s always fun when you find something entirely new, especially when it&amp;rsquo;s a quirk/feature on a tool that you use daily. This time around, I&amp;rsquo;ll be writing about git, in particular an option that you can use when stagging content for your next commit.&#xA;Most of the times, I either use git add &amp;lt;file&amp;gt; or if I&amp;rsquo;m sure that every unstaged change should be stagged, git add . will do the job.</description>
     </item>
-    
     <item>
       <title>Do Not Track - HTTP header</title>
       <link>https://dinispeixoto.com/til/do-not-track/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/do-not-track/</guid>
-      <description>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.
-I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</description>
+      <description>While I was setting up Google Analytics for this website, something that should be straightforward as Hugo already provides an internal template for this, I&amp;rsquo;ve noticed that my requests were not being tracked and displayed on the Google Analytics dashboard.&#xA;I started by making sure that the internal template was actually being properly used and then, just in case, that the tracking id was correct. Both seemed to be ok.</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,98 +5,79 @@
     <link>https://dinispeixoto.com/tags/</link>
     <description>Recent content in Tags on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>machine learning</title>
+      <title>Machine Learning</title>
       <link>https://dinispeixoto.com/tags/machine-learning/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>online feature store</title>
+      <title>Online Feature Store</title>
       <link>https://dinispeixoto.com/tags/online-feature-store/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/online-feature-store/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>redis</title>
+      <title>Redis</title>
       <link>https://dinispeixoto.com/tags/redis/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/redis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>software engineering</title>
+      <title>Software Engineering</title>
       <link>https://dinispeixoto.com/tags/software-engineering/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/software-engineering/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>calibrated probabilities</title>
+      <title>Calibrated Probabilities</title>
       <link>https://dinispeixoto.com/tags/calibrated-probabilities/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/calibrated-probabilities/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>probability calibration</title>
+      <title>Probability Calibration</title>
       <link>https://dinispeixoto.com/tags/probability-calibration/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/probability-calibration/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>batch</title>
+      <title>Batch</title>
       <link>https://dinispeixoto.com/tags/batch/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/batch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bert</title>
+      <title>Bert</title>
       <link>https://dinispeixoto.com/tags/bert/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/bert/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pytorch</title>
+      <title>Pytorch</title>
       <link>https://dinispeixoto.com/tags/pytorch/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/pytorch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spark</title>
+      <title>Spark</title>
       <link>https://dinispeixoto.com/tags/spark/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/tags/spark/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

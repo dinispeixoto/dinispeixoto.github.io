@@ -1,53 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>machine learning on Dinis Peixoto</title>
+    <title>Machine Learning on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/machine-learning/</link>
-    <description>Recent content in machine learning on Dinis Peixoto</description>
+    <description>Recent content in Machine Learning on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leveraging Redis for online feature lookup</title>
       <link>https://dinispeixoto.com/til/redis-performance/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/redis-performance/</guid>
-      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
-In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time.</description>
+      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.&#xA;In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time.</description>
     </item>
-    
     <item>
       <title>Probability Calibration</title>
       <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/calibrated-probabilities/</guid>
-      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
-Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
+      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.&#xA;Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
     </item>
-    
     <item>
       <title>Distributed model inference using Spark</title>
       <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/distributed-model-inference-spark/</guid>
-      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
-Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
+      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:&#xA;text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model I will use this TIL to share some of the key learnings I could get from this experience.&#xA;Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
     </item>
-    
     <item>
       <title>Brand Recommendations - TF-IDF</title>
       <link>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</guid>
-      <description>I started learning about Machine Learning with a couple online courses. The thing with these courses is that I got to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.
-This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
+      <description>I started learning about Machine Learning with a couple online courses. The thing with these courses is that I got to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.&#xA;This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
     </item>
-    
   </channel>
 </rss>

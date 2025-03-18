@@ -4,9 +4,9 @@
         <link>https://dinispeixoto.com/posts/</link>
         <description>Recent content in Posts on Dinis Peixoto</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://dinispeixoto.com/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
@@ -27,7 +27,7 @@
 <p>Yet, having an entire team working on the same problem brings its own challenges. It&rsquo;s imperative that the team establishes a set of well-defined procedures and rules. Furthermore, Mob Programming may not be suitable for all kinds of tasks or teams. Depending on the task the team is tackling, it should first be established whether Mob, Pair or Solo Programming is the appropriate methodology. None of the three is suitable for all situations. It&rsquo;s up to the teams to give them a try and figure out when to use them.</p>
 <h2 id="how-does-it-work">How does it work?</h2>
 <p>A typical Mob Programming setup consists of moving the team to an isolated space (e.g. a meeting room) and bringing one computer that should be connected to either a large monitor or a projector. Having a whiteboard to write down possible solutions and describe the next steps is great to empower collaborative brainstorming. Seats and tables for everyone is a must, as everyone should be comfortable during the session, this is particularly relevant as these sessions tend to be time-consuming. Since the beginning of the Covid-19 pandemic, we have adapted our ways of working to facilitate <a href="https://www.remotemobprogramming.org/">Remote Mob Programming</a> sessions - but more to come on that later.</p>
-<p><img src="/img/posts/mob/mob.png" alt="Environment &amp; Setup"></p>
+<p><img alt="Environment &amp; Setup" src="/img/posts/mob/mob.png"></p>
 <p>Two key roles must be considered when using Mob Programming: the Driver and the Navigator. The Driver is the person at the keyboard, responsible for moving the codebase forward. The Navigator understands what the group has decided to aim for and provides instructions to the Driver. The Navigator shouldn&rsquo;t dictate the actual code that the Driver has to write down, only the expected solution. Sometimes, the Navigator role may not be needed. It is up to the Driver to opt-in or out. Nonetheless, when there&rsquo;s no Navigator, the Driver may get lost by having multiple people explaining what to do. These roles should rotate between all team members at regular intervals (usually monitored by a timer).</p>
 <p>The session should be held continuously until the task is done. Quick breaks, like coffee or bathroom, are allowed and shouldn&rsquo;t require the session to stop. Some longer breaks like lunch must be agreed between the team so that everyone does it at the same time to prevent distractions and absences.</p>
 <h2 id="what-about-productivity">What about productivity?</h2>
@@ -121,7 +121,7 @@ This is where things get interesting. One of the initiatives that I had at the c
 <p><strong>Content-Based Filtering</strong>: providing article recommendations based on the content of the article. If users usually read articles about <em>machine learning</em>, they will be more likely to read other articles that share the same topic</p>
 </li>
 </ul>
-<p><img src="/img/posts/brand-recommendations-tfidf/recommendation-systems.png" alt="Recommendation Systems"></p>
+<p><img alt="Recommendation Systems" src="/img/posts/brand-recommendations-tfidf/recommendation-systems.png"></p>
 <p>Even though I find the Collaborative Filtering type of systems a lot more interesting, they are generally more challenging. I decided to start with a <strong>Content-Based Recommendations System</strong> as the only data that it will need are descriptions from products available on the website. Later on, I will consider building a Hybrid Recommendations System where both Content-Based and Collaborative Filtering can be used simultaneously.</p>
 <p>The goal will be to build a Content-Based Brand Recommendations System that provides the Top N brand recommendations for a particular brand.</p>
 <h2 id="term-frequency---inverse-document-frequency">Term Frequency - Inverse Document Frequency</h2>
@@ -187,7 +187,7 @@ This is where things get interesting. One of the initiatives that I had at the c
 </table>
 <h2 id="cosine-similarity">Cosine Similarity</h2>
 <p>Well, we already have a vector for each of the brands. It&rsquo;s time to compare them to see which vectors are similar. Cosine Similarity is one of the most common strategies to compare how similar two vectors are. It is defined by the cosine of the angle between two vectors, and we will see later that it should be the same as the dot product of the two vectors when they are normalized, i.e. both have length 1.</p>
-<p><img src="/img/posts/brand-recommendations-tfidf/cosine_similarity.png" alt="Cosine Similarity"></p>
+<p><img alt="Cosine Similarity" src="/img/posts/brand-recommendations-tfidf/cosine_similarity.png"></p>
 <p>Even though the cosine values range from -1 to 1, we will never have negative values in our vectors. The range will always be from 0 to 1, where values near 1 will mean that the vectors are similar, i.e. the brands that those vectors correspond to are similar and can be recommended together.</p>
 <p>The easiest way to see this in practice is to consider two vectors that denote the same brand, which is the same as saying two equal vectors. If they are the same, then the angle between the two is 0. The cosine of its angle <code>cos(0)</code> is 1. When building our <em>N_brands</em> x <em>N_brands</em> matrix, we will see that, for each brand, the most similar brand (where the cosine similarity is 1) is the brand itself.</p>
 <table>
@@ -212,9 +212,9 @@ This is where things get interesting. One of the initiatives that I had at the c
 </tbody>
 </table>
 <p>Let&rsquo;s now look at the cosine similarity formula. If our vectors are normalized, every vector has length 1, meaning that we can remove the fraction&rsquo;s denominator as it will also be 1. Without the denominator, the only thing left to calculate is the <em>dot product</em> of the vectors we want to compare.</p>
-<p><img src="/img/posts/brand-recommendations-tfidf/formula.png" alt="Formula"></p>
+<p><img alt="Formula" src="/img/posts/brand-recommendations-tfidf/formula.png"></p>
 <p>If you look closely, the dot product should be straightforward, as each <code>Ai x Bi</code> will be the multiplication of the weights of the term <code>i</code> for the brands A and B. The image below should help understanding how the dot product of two vectors works.</p>
-<p><img src="/img/posts/brand-recommendations-tfidf/dot_product.jpg" alt="Formula"></p>
+<p><img alt="Formula" src="/img/posts/brand-recommendations-tfidf/dot_product.jpg"></p>
 <p>So, for each brand, we will calculate the dot product that the brand&rsquo;s vector makes with every other brand&rsquo;s vector, which will result in the <em>N_brands</em> x <em>N_brands</em> matrix that we were seeking. To provide the Top N recommendations for a given brand, we will have to search for the brands that resulted in a higher dot product for the brand we are testing.</p>
 <p>Looking at the example below, we can see that we would be more likely to recommend brand C (<code>0.8</code>) than brand B (<code>0.1</code>) to users that also like or buy products from brand A.</p>
 <table>
@@ -376,7 +376,7 @@ This is where things get interesting. One of the initiatives that I had at the c
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Brand </span><span style="color:#e6db74">{</span>brand_name<span style="color:#e6db74">}</span><span style="color:#e6db74"> (</span><span style="color:#e6db74">{</span>brand_id<span style="color:#e6db74">}</span><span style="color:#e6db74">) with score </span><span style="color:#e6db74">{</span>str(score)<span style="color:#e6db74">}</span><span style="color:#e6db74"> &#34;</span>)
 </span></span></code></pre></div><p>Without further ado, let&rsquo;s see the results and reach some conclusions around them.</p>
-<p><img src="/img/posts/brand-recommendations-tfidf/recs.png" alt="Results"></p>
+<p><img alt="Results" src="/img/posts/brand-recommendations-tfidf/recs.png"></p>
 <ol>
 <li><strong>Nike</strong> and <strong>Jordan</strong> is really interesting since they belong to the same parent company. Also, Nike recommendations seem to be decent, to say the least.</li>
 <li>Sister brands are recommended together, e.g. multiple <strong>Adidas collaborations</strong> and <strong>COMME DES GARÇONS</strong> labels.</li>

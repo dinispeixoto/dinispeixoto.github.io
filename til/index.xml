@@ -5,109 +5,79 @@
     <link>https://dinispeixoto.com/til/</link>
     <description>Recent content in Today I learned on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leveraging Redis for online feature lookup</title>
       <link>https://dinispeixoto.com/til/redis-performance/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/redis-performance/</guid>
-      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.
-In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time.</description>
+      <description>Redis, a popular in-memory data structure store, serves as a critical component in the infrastructure of machine learning systems, enabling fast lookups of features required for online inference.&#xA;In the last few days, I was facing a interesting challenge while working on feature lookups from a Redis datastore for online inference. Although the initial setup appeared to be straightforward, it quickly became evident that the lookup performance was far from ideal, with the response time increasing significantly over time.</description>
     </item>
-    
     <item>
       <title>Probability Calibration</title>
       <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/calibrated-probabilities/</guid>
-      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
-Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
+      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.&#xA;Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
     </item>
-    
     <item>
       <title>Distributed model inference using Spark</title>
       <link>https://dinispeixoto.com/til/distributed-model-inference-spark/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/distributed-model-inference-spark/</guid>
-      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:
- text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model  I will use this TIL to share some of the key learnings I could get from this experience.
-Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
+      <description>During the past few days, I have been working on running batch inference for a large amount of data using Spark. The goal was to generate embeddings:&#xA;text embeddings using a fine-tuned BERT model image embeddings using a fine-tuned ViT model I will use this TIL to share some of the key learnings I could get from this experience.&#xA;Pandas UDF vs Spark UDF Pandas UDF instead of Spark UDF helps improve performance, also allows running in batches of rows/partition instead of a single row/partition (everything&amp;rsquo;s explained here).</description>
     </item>
-    
     <item>
       <title>Kafka exactly-once semantics</title>
       <link>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</guid>
-      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
-  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
+      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.&#xA;At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
     </item>
-    
     <item>
       <title>Spark architecture</title>
       <link>https://dinispeixoto.com/til/spark-architecture/</link>
       <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/spark-architecture/</guid>
-      <description>Apache Spark is a distributed processing platform used for big data workloads. It is usually used for data or machine learning pipelines that require processing large amounts of data.
-Spark&amp;rsquo;s architecture includes several components, which we will describe next.
-Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
+      <description>Apache Spark is a distributed processing platform used for big data workloads. It is usually used for data or machine learning pipelines that require processing large amounts of data.&#xA;Spark&amp;rsquo;s architecture includes several components, which we will describe next.&#xA;Driver Program When creating and running a Spark application, it starts by running in the driver machine, e.g. your own machine. However, in order to fully leverage Spark, applications need to run as a set of independent processes in a cluster, as this is what enables the distributed processing and horizontal scaling we need for big data.</description>
     </item>
-    
     <item>
       <title>Column vs row-oriented databases</title>
       <link>https://dinispeixoto.com/til/column-row-databases/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/column-row-databases/</guid>
-      <description>The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.
-This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected.</description>
+      <description>The key difference between column and row-oriented databases is the way values are stored. Column-oriented databases store all the values for a given column in the same place, while row-oriented databases store all the values in a row (no matter the number of columns) together.&#xA;This means that if one needs to query a lot of rows but only a few columns, using a database that keeps columns stored together can provide a huge performance advantage, as data can be retrieved based only on the columns that need to be projected.</description>
     </item>
-    
     <item>
       <title>Benefits of using `__slots__`</title>
       <link>https://dinispeixoto.com/til/slots/</link>
       <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/slots/</guid>
-      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example:  ...  foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
+      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.&#xA;class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
     </item>
-    
     <item>
       <title>`__new__` vs `__init__`</title>
       <link>https://dinispeixoto.com/til/new-vs-init/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/new-vs-init/</guid>
-      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example:  def __init__(self, foo, bar):  self.foo = foo  self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
+      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.&#xA;class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
     </item>
-    
     <item>
       <title>@staticmethod vs @classmethod</title>
       <link>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</guid>
-      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
+      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.&#xA;Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
     </item>
-    
     <item>
       <title>Force Python to release memory</title>
       <link>https://dinispeixoto.com/til/force-python-to-release-memory/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/force-python-to-release-memory/</guid>
       <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Processing on Dinis Peixoto</title>
+    <link>http://localhost:1313/tags/processing/</link>
+    <description>Recent content in Processing on Dinis Peixoto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Threading vs Processing in Python</title>
+      <link>http://localhost:1313/posts/threading-vs-processing-in-python/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/threading-vs-processing-in-python/</guid>
+      <description>It&amp;rsquo;s quite common for applications to end up with either IO or CPU intensive operations, and the goal of this blog post is to help Python developers understand when to use one over the other.&#xA;Threading threads share memory GIL limitation (preemptive blabla) Example using IO Processing processes dont share memory no GIL limitation memory is replicated accross processes Example using CPU When to use one over the other </description>
+    </item>
+  </channel>
+</rss>

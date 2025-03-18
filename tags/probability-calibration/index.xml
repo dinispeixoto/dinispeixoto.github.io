@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>probability calibration on Dinis Peixoto</title>
+    <title>Probability Calibration on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/probability-calibration/</link>
-    <description>Recent content in probability calibration on Dinis Peixoto</description>
+    <description>Recent content in Probability Calibration on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/probability-calibration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/probability-calibration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Probability Calibration</title>
       <link>https://dinispeixoto.com/til/calibrated-probabilities/</link>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/calibrated-probabilities/</guid>
-      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.
-Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
+      <description>Please keep in mind that this will be a quite simple explanation of calibrated probabilities and how they are important. In order to learn more about how to use them for a specific type of model please refer to the References section below.&#xA;Let&amp;rsquo;s consider we are training a binary classification model that predicts whether a random photo has a dog or not, the predicted score will be a value from 0 to 1 (or 0 to 100%), ideally representing the probability of the image actually having a dog.</description>
     </item>
-    
   </channel>
 </rss>

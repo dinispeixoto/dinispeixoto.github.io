@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>oop on Dinis Peixoto</title>
+    <title>Oop on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/oop/</link>
-    <description>Recent content in oop on Dinis Peixoto</description>
+    <description>Recent content in Oop on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/oop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Benefits of using `__slots__`</title>
       <link>https://dinispeixoto.com/til/slots/</link>
       <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/slots/</guid>
-      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.
-class Example:  ...  foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
+      <description>Class instances in Python can hold instance variables. Due to Python&amp;rsquo;s dynamic nature, these variables live within a dictionary (__dict__) for a given class instance.&#xA;class Example: ... foo = Example() foo.name = &amp;#34;name&amp;#34; foo.age = 10 The special attribute __slots_ works as an alternative to __dict__ as when explicitly stated in the class definition, allows you to define the attributes the class instances can have. This also means that instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions other than the slots mentioned when creating the class.</description>
     </item>
-    
     <item>
       <title>`__new__` vs `__init__`</title>
       <link>https://dinispeixoto.com/til/new-vs-init/</link>
       <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/new-vs-init/</guid>
-      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.
-class Example:  def __init__(self, foo, bar):  self.foo = foo  self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
+      <description>If you&amp;rsquo;re familiar with OOP, I&amp;rsquo;m sure that you have already heard of constructors - a special method used to create and initialize a new instance of a given class. In Python, when defining a new class, an __init__ method is usually declared to initialize the attributes of the class.&#xA;class Example: def __init__(self, foo, bar): self.foo = foo self.bar = bar The interesting thing is that while other object-oriented programming languages have a constructor method that both creates a new instance and initializes it, Python has two different methods for this:</description>
     </item>
-    
     <item>
       <title>@staticmethod vs @classmethod</title>
       <link>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</guid>
-      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.
-Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
+      <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.&#xA;Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
     </item>
-    
   </channel>
 </rss>

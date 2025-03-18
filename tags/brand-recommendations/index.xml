@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>brand recommendations on Dinis Peixoto</title>
+    <title>Brand Recommendations on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/brand-recommendations/</link>
-    <description>Recent content in brand recommendations on Dinis Peixoto</description>
+    <description>Recent content in Brand Recommendations on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/brand-recommendations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/brand-recommendations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brand Recommendations - TF-IDF</title>
       <link>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/posts/brand-recommendations-tf-idf/</guid>
-      <description>I started learning about Machine Learning with a couple online courses. The thing with these courses is that I got to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.
-This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
+      <description>I started learning about Machine Learning with a couple online courses. The thing with these courses is that I got to learn a lot of cool stuff supported with step-by-step tutorials, but I never took some time to actually build something on my own, that tackles a real issue that I&amp;rsquo;m facing.&#xA;This is where things get interesting. One of the initiatives that I had at the company I was working back then was around brand recommendations.</description>
     </item>
-    
   </channel>
 </rss>

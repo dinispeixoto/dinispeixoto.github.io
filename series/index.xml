@@ -5,35 +5,30 @@
     <link>https://dinispeixoto.com/series/</link>
     <description>Recent content in Series on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIL</title>
       <link>https://dinispeixoto.com/series/til/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/series/til/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Mob Programming</title>
       <link>https://dinispeixoto.com/series/mob-programming/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/series/mob-programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Brand Recommendations</title>
       <link>https://dinispeixoto.com/series/brand-recommendations/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/series/brand-recommendations/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

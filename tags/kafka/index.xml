@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kafka on Dinis Peixoto</title>
+    <title>Kafka on Dinis Peixoto</title>
     <link>https://dinispeixoto.com/tags/kafka/</link>
-    <description>Recent content in kafka on Dinis Peixoto</description>
+    <description>Recent content in Kafka on Dinis Peixoto</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dinispeixoto.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dinispeixoto.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kafka exactly-once semantics</title>
       <link>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</link>
       <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://dinispeixoto.com/til/kafka-exactly-once-semantics/</guid>
-      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.
-  At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
+      <description>Before explaining how Kafka can achieve exactly-once semantics, let&amp;rsquo;s first enumerate the different types of Messaging Semantics one can find in a distributed pub-sub system.&#xA;At-least-once: the most commonly used, if the producer receives an ACK from the broker, then the message has been written to a topic. However either the ACK can fail to be sent or the broker itself can fail before sending the ACK, in both scenarios the producer would timeout and retry sending another message with the assumption that the first one was not written to the broker, leading to duplicates.</description>
     </item>
-    
   </channel>
 </rss>
