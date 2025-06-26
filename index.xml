@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dinispeixoto.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Liner Regression from scratch</title>
+      <link>https://dinispeixoto.com/til/liner-regression/</link>
+      <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://dinispeixoto.com/til/liner-regression/</guid>
+      <description>Fundamentals Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.&#xA;It can be represented as follows:&#xA;$$ \hat{y} = \text{b} + w_1 x_1 + w_2 x_2 + \dots + w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&amp;rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\)).</description>
+    </item>
     <item>
       <title>Leveraging Redis for online feature lookup</title>
       <link>https://dinispeixoto.com/til/redis-performance/</link>
@@ -71,13 +78,6 @@
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://dinispeixoto.com/til/staticmethod-vs-classmethod/</guid>
       <description>Object-oriented programming in Python is far from being perfect. There are, however, some built-in functions that help programmers achieve OOP as we can find in truly OOP languages like Java or C#. Today I will try to clarify the purpose of two built-in decorators that are widely used in the context of OOP: @staticmethod and @classmethod.&#xA;Let&amp;rsquo;s consider the example below of an Example python class, with a method (method), a static method (static_method) and a class method (class_method).</description>
-    </item>
-    <item>
-      <title>Force Python to release memory</title>
-      <link>https://dinispeixoto.com/til/force-python-to-release-memory/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://dinispeixoto.com/til/force-python-to-release-memory/</guid>
-      <description>Let me start by clarifying that there are far better solutions to manage Python&amp;rsquo;s memory other than the one I&amp;rsquo;ll showcase here. The solution/workaround that I will present was appropriate for the problem I was facing, which included having to process multiple really large pickle objects. Please note that loading multiple of these objects to memory was not even an option as they could take up to 20 Gs of memory.</description>
     </item>
   </channel>
 </rss>

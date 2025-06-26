@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dinispeixoto.com/categories/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dinispeixoto.com/</loc>
     <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dinispeixoto.com/categories/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/til/redis-performance/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <loc>https://dinispeixoto.com/til/liner-regression/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/machine-learning/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/categories/machine-learning-engineering/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/tags/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/series/til/</loc>
+    <lastmod>2025-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dinispeixoto.com/til/redis-performance/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/online-feature-store/</loc>
@@ -23,16 +35,7 @@
     <loc>https://dinispeixoto.com/tags/redis/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dinispeixoto.com/series/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dinispeixoto.com/tags/software-engineering/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/tags/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dinispeixoto.com/series/til/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dinispeixoto.com/tags/calibrated-probabilities/</loc>
