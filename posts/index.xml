@@ -6,8 +6,264 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://dinispeixoto.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Linear Regression from scratch</title>
+            <link>https://dinispeixoto.com/posts/linear-regression-from-scratch/</link>
+            <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+            
+            <guid>https://dinispeixoto.com/posts/linear-regression-from-scratch/</guid>
+            <description>Fundamentals Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.
+It can be represented as follows:
+$$ \hat{y} = \text{b} + w_1 x_1 + w_2 x_2 + \dots + w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Functions Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&amp;rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\)).</description>
+            <content type="html"><![CDATA[<h3 id="fundamentals">Fundamentals</h3>
+<p>Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.</p>
+<p>It can be represented as follows:</p>
+$$
+\hat{y} = \text{b} + w_1 x_1 + w_2 x_2 + \dots + w_n x_n
+$$
+<ul>
+<li>\(\hat{y}\) is the label</li>
+<li>\(\text{b}\) is the bias</li>
+<li>\(w_i\) is the weight of the feature i</li>
+<li>\(x_i\) is the feature value of feature i</li>
+</ul>
+<h3 id="loss-functions">Loss Functions</h3>
+<p>Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\)). Something worth keeping in mind that is we don&rsquo;t really care about the direction, only the distance between the values, so loss functions usually removing the sign - i.e. 2 - 5 = -3, loss is 3.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Loss Type</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Equation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1 Loss</strong></td>
+<td>Sum of the absolute differences between predicted and actual values.</td>
+<td>$$L = \sum_{i=1}^{N} \lvert y_i - \hat{y}_i \rvert$$</td>
+</tr>
+<tr>
+<td><strong>L2 Loss</strong></td>
+<td>Sum of the squared differences between predicted and actual values.</td>
+<td>$$L = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$$</td>
+</tr>
+<tr>
+<td><strong>Mean Absolute Error (MAE)</strong></td>
+<td>Average of L1 loss across <em>N</em> examples.</td>
+<td>$$MAE = \frac{1}{N} \sum_{i=1}^{N} \lvert y_i - \hat{y}_i \rvert$$</td>
+</tr>
+<tr>
+<td><strong>Mean Squared Error (MSE)</strong></td>
+<td>Average of L2 loss across <em>N</em> examples.</td>
+<td>$$MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$$</td>
+</tr>
+</tbody>
+</table>
+<p>MSE is useful for outliers, it moves the model more towards it as it reduces the loss, while MAE might keep the model closer to predictions that are not necessarily an outlier.</p>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<p>The goal of training model is essentially figuring out the values for \(\text{b}\) and \(w_i\) for every feature i that minimizes the loss function picked. This is where gradient descent comes in, it iteratively finds the weights and bias that produce the model with the lowest loss. It does so by doing the following process:</p>
+<ol>
+<li>Calculate loss with current weights and bias</li>
+<li>For each weight and bias, determine the direction in which we should move them to reduce loss (opposite of the gradient)</li>
+<li>For each weight and bias, update them by moving a small amount in the direction found</li>
+<li>Return to step 1 and repeat until we the model can&rsquo;t reduce the loss any further</li>
+</ol>
+<h4 id="1-start-with-weight-and-bias-as-0">1. Start with weight and bias as 0</h4>
+<p>We can assume that weights and bias can start as 0 when training starts.</p>
+$$
+\hat{y} = 0 + 0 \cdot x
+$$
+<h4 id="2-calculate-mse-loss-with-the-current-model-parameters">2. Calculate MSE loss with the current model parameters</h4>
+<p>When calculating MSE for the model above, we would end up with something like the following if we assume expected values of 18, 15 and so on for our model.</p>
+$$ Loss = ((18 - 0)^2 + (15 - 0)^2 ) + ... / N $$
+<p>This is obviously not going to result in the best model predictions, so our goal now becomes finding which bias and weights take us to the best possible model, thus reducing the loss.</p>
+<h4 id="3-calculate-the-slope-of-the-tangent-to-the-loss-function-for-each-weight-and-bias-ie-the-gradient">3. Calculate the slope of the tangent to the loss function for each weight and bias (i.e. the gradient)</h4>
+<p>We can only optimize the loss if we understand exacly how to update each value, in this case weight and bias, in a way that results in a lower loss. This is where gradients come in.</p>
+<p>The gradient is essentially how much y changes when x increases by 1, it tells us in which direction the function is taking us - e.g. m is the gradient in \(y = mx + b\).</p>
+<p>To get the slope for the lines tangent to the weight and bias, we take the derivative of the loss function with respect to the weight and the bias, and then solve the equations.</p>
+<p>Again, assuming we use MSE as our loss function \( \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 \) and \(y_i = w \cdot x + b\), as it represents our model.</p>
+<p><strong>Weight derivative</strong></p>
+<p>The weight derivative is \( \frac{\partial}{\partial w} ( (w \cdot x + b - y)^2 ) \), we can apply the <a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a>.</p>
+<p>We assume \(u^2\), where \(u = (w \cdot x + b - y)\)</p>
+<p>So \( \frac{d}{dw} (u^2) = 2u \cdot \frac{du}{dw} \)</p>
+<p>Since \(\frac{du}{dw} = x\)</p>
+<p>It becomes \( \frac{d}{dw} ( (w \cdot x + b - y)^2 ) = 2(w \cdot x + b - y) \cdot x \).</p>
+<p>We need to do this for every sample in the training dataset, so it&rsquo;s actually:</p>
+$$ \frac{\partial \text{MSE}}{\partial w} = \frac{1}{M} \sum_{i=1}^{M} 2(w \cdot x^{(i)} + b - y^{(i)}) \cdot x^{(i)} $$
+<p><strong>Bias derivative</strong></p>
+<p>If we do the same for the bias, we would instead get:</p>
+$$ \frac{\partial \text{MSE}}{\partial b} = \frac{1}{M} \sum_{i=1}^{M} 2(w \cdot x^{(i)} + b - y^{(i)}) $$
+<h4 id="4-update-the-weights">4. Update the weights</h4>
+<p>Well, now that we know exactly how to calculate the gradients, this should enable us to update both weight and bias in a way that optimizes loss.</p>
+<p>The gradient tells us the opposite direction of where we have to go. An easy way to understand this is essentially thinking that if the gradient for a loss function is 5, every time we increase the weight by 1 unit, the loss will increase by 5, so essentially we want to do the opposite as our goal is to decrease the loss.</p>
+$$ \text{new weight} = \text{old weight} - \eta \cdot \text{weight's gradient} $$
+$$ \text{new bias} = \text{old bias} - \eta \cdot \text{bias' gradient} $$
+<p>The small value used to update the gradient is the <em>learning rate</em>, which we will be leaving out of scope for now.</p>
+<h4 id="5-model-training">5. Model Training</h4>
+<p>After iteratively applying the steps above, model training would look something like this:</p>
+<table>
+<thead>
+<tr>
+<th>Iteration</th>
+<th>Weight</th>
+<th>Bias</th>
+<th>Loss (MSE)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>303.71</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.20</td>
+<td>0.34</td>
+<td>170.84</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.05</td>
+<td>0.59</td>
+<td>103.17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.66</td>
+<td>0.78</td>
+<td>68.70</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3.09</td>
+<td>0.91</td>
+<td>51.13</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3.40</td>
+<td>1.01</td>
+<td>42.17</td>
+</tr>
+</tbody>
+</table>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/crash-course/linear-regression">Linear Regression</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Logistic Regression from scratch</title>
+            <link>https://dinispeixoto.com/posts/logistic-regression-from-scratch/</link>
+            <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+            
+            <guid>https://dinispeixoto.com/posts/logistic-regression-from-scratch/</guid>
+            <description>Fundamentals Logistic Regression models, unlike Linear Regression, should help us predict the probability of a given outcome - e.g. if a payment is fraudulent or not. A Logistic Regression model, just like in Linear Regression can be represented as follows:
+$$ \text{z} = \text{b} + w_1 x_1 + w_2 x_2 + \dots + w_n x_n $$ \(\text{z}\) is the output of the linear equation, also called the log odds. \(\text{b}\) is the bias.</description>
+            <content type="html"><![CDATA[<h3 id="fundamentals">Fundamentals</h3>
+<p>Logistic Regression models, unlike Linear Regression, should help us predict the probability of a given outcome - e.g. if a payment is fraudulent or not. A Logistic Regression model, just like in Linear Regression can be represented as follows:</p>
+$$
+\text{z} = \text{b} + w_1 x_1 + w_2 x_2 + \dots + w_n x_n
+$$
+<ul>
+<li>\(\text{z}\) is the output of the linear equation, also called the log odds.</li>
+<li>\(\text{b}\) is the bias.</li>
+<li>The \(w_i\) values are the model&rsquo;s learned weights.</li>
+<li>The \(x_i\) values are the feature values for a particular example.</li>
+</ul>
+<p>However we need to keep in mind that the output needs to be represented as a probability instead, i.e. a value between 0 and 1. This is where log-odds come in.</p>
+<p>Let&rsquo;s start by understanding what odds are.</p>
+<h4 id="odds">Odds</h4>
+<p>The odds of an event are calculated as the probability of the event occurring divided by the probability of the event not occurring \((p / (1-p))\).</p>
+<p>Odds are not probabilities, but the ratio of something happening vs the ratio of something not happening. Probabilities are the ratio of something happening to everything that could happen.</p>
+<p>Example could be odds of a given team winning a game are 5:3, so 5/3 = 1.7. The probability of the team winning the same is 5/(5+3) = 5/8 = 0.625.</p>
+<h4 id="log-odds">Log-odds</h4>
+<p>The odds of a team losing will always be a number from 0 to 1, e.g. 1/3 or 1/20 or 1/100. While the odds of a team winning will always be a number from 1 to \((+\infty\)) - this creates asymmetry. This is where log(odds) comes into play, as by doing the log of the odds everything becomes symmetrical instead!</p>
+<p>Let&rsquo;s consider two examples:</p>
+<ul>
+<li><strong>ratio of 1 to 6</strong>: log(1/6) = log(0.17) = -1.79</li>
+<li><strong>ratio of 6 to 1</strong>: log(6/1) = log(6) = 1.79</li>
+</ul>
+<p>So if the logs are against, the log(odds) will be negative up to infinity, while if they are in favor we see the opposite. By using the log function we ensure that the distance from the origin (0) is the same for 1:6 and 6:1, which wouldn&rsquo;t be possible otherwise.</p>
+<p>The log-odds is the natural logarithm of the odds, expressed as:</p>
+$$ \text{logit}(p) = \log\left(\frac{p}{1 - p}\right) $$
+<h4 id="sigmoid-function">Sigmoid function</h4>
+<p>To go from log-odds back to probability, we can use the sigmoid function:</p>
+$$ \text{y'} = \frac{1}{1 + e^{-z}} $$
+<p>Something worth keeping in mind is that the linear function from the logistic regression model becomes input to the sigmoid function, which turns it into a s-shape function. The log-odds are transformed from really large numbers of z into probabilities between 0 and 1, exclusive.</p>
+<p><img alt="sigmoid" src="/img/posts/logistic-regression/sigmoid.png"></p>
+<p>So essentially the output of a logistic regression model is a log-odds, which can easily be transformed into a probability through the sigmoid function.</p>
+<h3 id="loss-functions-log-loss">Loss Functions: Log loss</h3>
+<p>The Log Loss equation returns the logarithm of the magnitude of the change, rather than just the distance from data to prediction.</p>
+$$ \text{LogLoss}(y, \hat{y}) = - \left( y \cdot \log(\hat{y}) + (1 - y) \cdot \log(1 - \hat{y}) \right) $$
+<p>It&rsquo;s worth understanding what would happen if we used the same loss function as a linear regression model, e.g. MSE. Let&rsquo;s assume we have 3 models - A, B and C, predicting 0.9, 0.6 and 0.0001, respectively for a true label example.</p>
+<p><strong>Model A</strong>
+</p>
+$$ \text{MSE} = (0.9 - 1)^2 = 0.01 $$
+$$ \text{LogLoss} = -\left(1 \cdot \log(0.9) + 0 \cdot \log(1 - 0.9)\right) = -\log(0.9) \approx 0.105 $$
+<p><strong>Model B</strong>
+</p>
+$$ \text{MSE} = (0.6 - 1)^2 = 0.16 $$
+$$ \text{LogLoss} = -\log(0.6) \approx -0.22 $$
+<p><strong>Model C</strong>
+</p>
+$$ \text{MSE} = (0.0001 - 1)^2 \approx 0.99 $$
+$$ \text{LogLoss} = -\log(0.0001) = -4 $$
+<p>The difference in MSE for models A and B is just 0.15, which is incredibily small, even though model B is not doing a good job. MSE only sees “how close is the number to 1”, and 0.6 is numerically closer to 1 than, say, 0.2. It doesn’t understand that 0.6 means “not very confident”.</p>
+<p>It&rsquo;s also possible to see in model C what happens when the model is incredibily wrong, for the possible label (y=1) the log loss becomes:</p>
+$$ \text{LogLoss} = -\log(\hat{y}) $$
+<p>So if the prediction is close to 0, the loss is going to be increasing towards \((+\infty\)). It&rsquo;s always worth checking how the log function works, for values from 1 and 0 in the x axis, y decreases rapidily, which is exactly what we are seeing here (although the inverse since the loss function is \(-\log(\text{x})\)). On the other hand, if the prediction is close to 1, the loss is going get closer to 0, as \(~log(1) = 0\).</p>
+<p><img alt="log" src="/img/posts/logistic-regression/log.png"></p>
+<p>Similarly, when predicting the negative label, it becomes:</p>
+$$ \text{LogLoss} = -\log(1 - \hat{y}) $$
+<p>So the log loss is essentially \(-\log(\hat{y})\) if y = 1 or \(-\log(1 - \hat{y})\) if y = 0, which makes it quite straightforward to understand.</p>
+<h3 id="recap">Recap</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear model</td>
+<td>\( z = w \cdot x + b \)</td>
+<td>Weighted sum of inputs</td>
+</tr>
+<tr>
+<td>Log-odds</td>
+<td>\( \log\left( \frac{p}{1 - p} \right) = z \)</td>
+<td>The linear model predicts log-odds. The log-odds scale is unbounded (\(-\infty\) to \(+\infty\)) perfect for linear models</td>
+</tr>
+<tr>
+<td>Probability (sigmoid)</td>
+<td>\( p = \frac{1}{1 + e^{-z}} \)</td>
+<td>Converts log-odds to probability. Probability scale is bounded (0 to 1)</td>
+</tr>
+<tr>
+<td>Log loss</td>
+<td>\( -y \log(\hat{p}) - (1 - y) \log(1 - \hat{p}) \)</td>
+<td>Penalizes confident wrong predictions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/crash-course/logistic-regression">Logistic Regression</a></li>
+<li><a href="https://www.youtube.com/watch?v=ARfXDSkQf1Y">Odds and Log(Odds)</a></li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>A year&#39;s worth of learnings from adopting Mob programming</title>

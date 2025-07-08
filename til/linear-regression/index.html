@@ -11,7 +11,7 @@ $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \
 <meta name="keywords" content="dinis peixoto, machine learning, machine learning engineering, mlops, computer science, today I learned, blog, hugo, software engineering, resume, machine learning" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="http://localhost:1313/til/liner-regression/" />
+<link rel="canonical" href="http://localhost:1313/til/linear-regression/" />
 
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -31,7 +31,7 @@ $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \
 
     <title>
         
-            Liner Regression from scratch :: Dinis Peixoto 
+            Linear Regression from scratch :: Dinis Peixoto 
         
     </title>
 
@@ -55,29 +55,29 @@ $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Liner Regression from scratch">
+<meta itemprop="name" content="Linear Regression from scratch">
 <meta itemprop="description" content="Fundamentals Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.
 It can be represented as follows:
-$$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\))."><meta itemprop="datePublished" content="2025-06-18T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2025-06-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="969"><meta itemprop="image" content="http://localhost:1313/img/dinis1.jpg" />
+$$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\))."><meta itemprop="datePublished" content="2023-06-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-06-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="972"><meta itemprop="image" content="http://localhost:1313/img/dinis1.jpg" />
 <meta itemprop="keywords" content="machine learning," />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/img/dinis1.jpg" /><meta name="twitter:title" content="Liner Regression from scratch"/>
+<meta name="twitter:image" content="http://localhost:1313/img/dinis1.jpg" /><meta name="twitter:title" content="Linear Regression from scratch"/>
 <meta name="twitter:description" content="Fundamentals Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.
 It can be represented as follows:
 $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\))."/>
 
 
 
-    <meta property="og:title" content="Liner Regression from scratch" />
+    <meta property="og:title" content="Linear Regression from scratch" />
 <meta property="og:description" content="Fundamentals Linear regression is a technique used to find the relationship between variables, in the context of machine learning that essentially means the relationship between features and labels.
 It can be represented as follows:
 $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \(\hat{y}\) is the label \(\text{b}\) is the bias \(w_i\) is the weight of the feature i \(x_i\) is the feature value of feature i Loss Loss is usually the metric we optimize the model for, it essentially tells us how wrong the model is - it measures the distance between the model&rsquo;s predictions (\(\text{y}\)) and the actual labels (\(\hat{y}\))." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/til/liner-regression/" /><meta property="og:image" content="http://localhost:1313/img/dinis1.jpg" /><meta property="article:section" content="til" />
-<meta property="article:published_time" content="2025-06-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2025-06-18T00:00:00+00:00" />
+<meta property="og:url" content="http://localhost:1313/til/linear-regression/" /><meta property="og:image" content="http://localhost:1313/img/dinis1.jpg" /><meta property="article:section" content="til" />
+<meta property="article:published_time" content="2023-06-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-18T00:00:00+00:00" />
 <meta property="og:see_also" content="http://localhost:1313/til/logistic-regression/" /><meta property="og:see_also" content="http://localhost:1313/til/redis-performance/" /><meta property="og:see_also" content="http://localhost:1313/til/calibrated-probabilities/" /><meta property="og:see_also" content="http://localhost:1313/til/distributed-model-inference-spark/" /><meta property="og:see_also" content="http://localhost:1313/til/kafka-exactly-once-semantics/" />
 
 
@@ -89,7 +89,7 @@ $$ \hat{y} = \text{b} &#43; w_1 x_1 &#43; w_2 x_2 &#43; \dots &#43; w_n x_n $$ \
 
 
 
-    <meta property="article:published_time" content="2025-06-18 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2023-06-18 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -167,7 +167,7 @@ if (!doNotTrack) {
         </div>
 
         <article>
-            <h2 class="post-title"><a href="http://localhost:1313/til/liner-regression/">Liner Regression from scratch</a></h2>
+            <h2 class="post-title"><a href="http://localhost:1313/til/linear-regression/">Linear Regression from scratch</a></h2>
 
             
             
@@ -309,6 +309,10 @@ $$ \text{new bias} = \text{old bias} - \eta \cdot \text{bias' gradient} $$
 </tr>
 </tbody>
 </table>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://developers.google.com/machine-learning/crash-course/linear-regression">Linear Regression</a></li>
+</ul>
 
             </div>
         </article>

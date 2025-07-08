@@ -17,25 +17,11 @@
       <description>MLOps </description>
     </item>
     <item>
-      <title>Knowledge Graphs</title>
-      <link>http://localhost:1313/posts/knowledge-graphs/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/knowledge-graphs/</guid>
-      <description>Hello world post RDF vs LPG My experience with Neo4j </description>
-    </item>
-    <item>
       <title>Machine Learning Pipeline</title>
       <link>http://localhost:1313/posts/machine-learning-pipeline/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/machine-learning-pipeline/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Python setup</title>
-      <link>http://localhost:1313/posts/python-setup/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/python-setup/</guid>
-      <description>Hello world post pyenv pipenv pytest flake8 black mypy isort </description>
     </item>
   </channel>
 </rss>
