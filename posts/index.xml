@@ -153,6 +153,33 @@ $$ \text{new bias} = \text{old bias} - \eta \cdot \text{bias' gradient} $$
 </tr>
 </tbody>
 </table>
+<h3 id="recap">Recap</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Goal</strong></td>
+<td>Find the best weights and bias that minimize the difference between predicted and actual values.</td>
+</tr>
+<tr>
+<td><strong>Model Formula</strong></td>
+<td>\( \hat{y} = w \cdot x + b \) — where <code>w</code> is weight, <code>x</code> is feature, and <code>b</code> is bias.</td>
+</tr>
+<tr>
+<td><strong>Loss Functions</strong></td>
+<td>Measure how wrong predictions are, e.g. MSE (\( \frac{1}{M} \sum (\hat{y} - y)^2 \)).</td>
+</tr>
+<tr>
+<td><strong>Gradient Descent</strong></td>
+<td>Iteratively updates weights using gradients: \( \frac{dL}{dw} = \frac{2}{M} \sum ((\hat{y} - y) \cdot x) \), \( \frac{dL}{db} = \frac{2}{M} \sum (\hat{y} - y) \). Update weights/bias in the opposite direction of gradients. Repeat until loss converges (stops decreasing significantly).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="references">References</h3>
 <ul>
 <li><a href="https://developers.google.com/machine-learning/crash-course/linear-regression">Linear Regression</a></li>
